@@ -2,7 +2,7 @@
 layout: default
 ---
 <header class="post-header">
-  <h1 class="post-title">Articles by category: {{ page.categories }}</h1>
+  <h1 class="post-title">Category / {{ page.title }}</h1>
 </header>
 
 <div class="post-content">
@@ -10,10 +10,12 @@ layout: default
   {% for category in site.categories %}
     {% capture category_slug %}{{ category | first }}{% endcapture %}
     {% for c_slug in category_slug %}
-      {% if c_slug == page.categories %}
-        <button class="btn btn-sm btn-default active btn-tags">{{ c_slug }}</button>
-      {% else %}
-        <a href="/category/{{ c_slug }}" class="btn btn-sm btn-default btn-tags">{{ c_slug }}</a>
+      {% if c_slug != 'blog' %}
+        {% if c_slug == page.categories %}
+          <button class="btn btn-sm btn-default active btn-tags">{{ c_slug }}</button>
+        {% else %}
+          <a href="/category/{{ c_slug }}" class="btn btn-sm btn-default btn-tags">{{ c_slug }}</a>
+        {% endif %}  
       {% endif %}
     {% endfor %}
   {% endfor %}
@@ -37,7 +39,7 @@ layout: default
         {% endif %}
       {% endif %}
         <ul class="posts">
-          <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
+          <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date: "%Y-%m-%d" }}</span></i></li>
         </ul>
       {% if forloop.last %}
         </div>

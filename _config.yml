@@ -1,44 +1,37 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
+title: 김지섭 블로그
+description: 위키, 넓혀라 기술 스택
+author: jisobkim
+profile: /static/img/profile_2020.jpg
+github: https://github.com/jisobkim
+mail: jisobkim@gmail.com
+about: Node.js React 개발하고 있습니다. 영상서비스, 프론트엔드 중점으로 개발하고 있습니다. 
+disqus_shortname: jisobkim
+google_analytics: UA-102579338-1
 
 enableTags: true
 tagarray: []
 
-collections:
-  project:
-    output: true
-    permalink: /project/:path/
-
 social:
     - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
+      link: "https://www.facebook.com/jisobkim"
     - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
+      link: "https://www.linkedin.com/in/jisobkim/"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/jisobkim"
+    - icon: fa-rss
+      link: "/feed.xml"
 
 share:
-  twitter_username: github.io
-  fb_appid: 1749788565247320
+  twitter_username: jisobkim
+  fb_appid: 471363289889856
 
 urls:
-    - text: About Me
-      url: /about/
-    - text: My Projects
-      url: /projects/
-    - text: XML Feed
-      url: /feed.xml
+    - text: Categories
+      url: /category/
+    - text: Blog
+      url: /blog/
 
-url: "https://agusmakmun.github.io"
+url: "https://jisobkim.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20

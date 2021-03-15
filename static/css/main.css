@@ -1,9 +1,7 @@
 body {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  background: url("/static/img/subtle_dots.png");
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
   font-weight: 300;
-  font-size: 16px;
   color: #666;
 }
 hr {
@@ -25,14 +23,13 @@ h1, h2, h3 {
 }
 h1 {
   margin-bottom: 10px;
-  font-size: 25px;
 }
 h2, h3 {
   margin-bottom: 5px;
 }
 a, a:link, a:active {
   text-decoration: none;
-  color: #3fa757;
+  color: #e68600;
 }
 a:hover {
   color: #B3B3B3;
@@ -42,6 +39,7 @@ a:hover {
 /* Layout */
 .main-layout {
   background: #fff;
+  padding-top: 15px;
 }
 .sidebar-nav {
   margin: 0;
@@ -151,15 +149,28 @@ div.col-sm-3 div.profile-about {
   max-width: 100%
 }
 
+.author-profile {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
 /* Responsive Conditional */
 @media (min-width: 1024px) {
   .fixed-condition {
     position: fixed;
-    max-width: 255px;
+    max-width: 200px;
   }
 }
 @media (max-width: 768px) {
   div.col-sm-3 {
     margin-top: 30px;
   }
+
+  .author-profile {
+    height: 90px;
+    width: 90px;
+  }
 }
+
+
