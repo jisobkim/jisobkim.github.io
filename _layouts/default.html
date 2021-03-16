@@ -119,50 +119,54 @@ layout: compress
     {% endif %}
   </head>
   <body>
-    <div class="container">
-      <div class="col-sm-3">
-        <div class="fixed-condition">
-          <a href="/"><img class="author-profile" src="{{ site.profile }}"></img></a>
-          {% if site.about %}
-            <div class="profile-about">
-              {{ site.about }}
+    <div class="wrapper">
+      <div class="container">
+        <div class="col-sm-8 col-offset-1 main-layout">
+          {{ content }}
+        </div>
+        <!-- end /.col-sm-8 -->
+
+        <div class="col-sm-3">
+          <div class="sidebar-layout">
+            <a href="/"><img class="author-profile" src="{{ site.profile }}"></img></a>
+            {% if site.about %}
+              <div class="profile-about">
+                {{ site.about }}
+              </div>
+            {% endif %}
+            <div class="social">
+              <ul>
+                {% for link in site.social %}
+                  <li><a href="{{ link.link }}" target="_blank"><i class="fa {{ link.icon }}"></i></a></li>
+                {% endfor %}
+              </ul>
             </div>
-          {% endif %}
-          <div class="social">
-            <ul>
-              {% for link in site.social %}
-                <li><a href="{{ link.link }}" target="_blank"><i class="fa {{ link.icon }}"></i></a></li>
+            <div class="search" id="js-search">
+              <input type="text" placeholder="" class="search__input form-control" id="js-search__input">
+              <ul class="search__results" id="js-search__results"></ul>
+            </div>
+            <hr />
+            <ul class="sidebar-nav">
+              <strong>Navigation</strong>
+              <li><a href="/">All</a></li>
+              {% for i in site.urls %}
+                <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
               {% endfor %}
             </ul>
           </div>
-          <div class="search" id="js-search">
-            <input type="text" placeholder="" class="search__input form-control" id="js-search__input">
-            <ul class="search__results" id="js-search__results"></ul>
-          </div>
-          <hr />
-          <ul class="sidebar-nav">
-            <strong>Navigation</strong>
-            <li><a href="/">All</a></li>
-            {% for i in site.urls %}
-              <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
-            {% endfor %}
-          </ul>
         </div>
-        <!-- end /.fixed-condition -->
-      </div>
+          <!-- end /.col-sm-3 -->
 
-      <div class="col-sm-8 col-offset-1 main-layout">
-        {{ content }}
-        <footer>
-          &copy; {{ site.author }}
-          {% if site.github %}
-            - Powered by Jekyll & Use <a href="https://github.com/agusmakmun/agusmakmun.github.io">Agus Makmun</a> Theme
-          {% endif %}
-        </footer>
       </div>
-      <!-- end /.col-sm-8 -->
+      <!-- end /.container -->
+
+      <footer>
+        &copy; {{ site.author }}
+        {% if site.github %}
+          - Powered by Jekyll & Use <a href="https://github.com/agusmakmun/agusmakmun.github.io">Agus Makmun</a> Theme
+        {% endif %}
+      </footer>
     </div>
-    <!-- end /.container -->
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
