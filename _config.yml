@@ -27,9 +27,9 @@ share:
 
 urls:
     - text: Categories
-      url: /category/
+      url: /category
     - text: Blog
-      url: /blog/
+      url: /blog
 
 url: "https://jisobkim.github.io"
 baseurl: ""
