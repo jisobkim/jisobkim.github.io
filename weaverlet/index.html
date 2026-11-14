@@ -101,6 +101,9 @@ header.nav {
 .fact b { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
 .fact span { color: var(--muted); font-size: 0.95rem; }
 
+.demo { padding: 4rem 0 2rem; text-align: center; }
+.demo h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0.4rem 0 2rem; }
+.demo video { width: 100%; height: auto; max-width: 64rem; margin: 0 auto; display: block; border-radius: 0.9rem; box-shadow: var(--shadow); background: var(--ink); }
 section.feature { padding: 5rem 0; }
 section.feature + section.feature { border-top: 1px solid var(--line); }
 .feature .wrap { display: grid; grid-template-columns: 1fr 1.35fr; gap: 3.5rem; align-items: center; }
@@ -189,6 +192,14 @@ footer .copy { margin-left: auto; }
         <div class="fact"><b><span lang="en">No account, no tracking</span><span lang="ko">가입도 추적도 없음</span></b><span><span lang="en">Weaverlet doesn't collect data. Your notes never leave your folders.</span><span lang="ko">데이터를 모으지 않습니다. 노트는 폴더 밖으로 나가지 않습니다.</span></span></div>
         <div class="fact"><b><span lang="en">Fast on big folders</span><span lang="ko">큰 폴더에서도 빠르게</span></b><span><span lang="en">Thousands of notes open quickly, and search finds partial matches in Korean, Chinese and Japanese.</span><span lang="ko">노트 수천 개도 빠르게 열고, 한글 부분 일치까지 찾습니다.</span></span></div>
       </div>
+    </div>
+  </section>
+
+  <section class="demo">
+    <div class="wrap">
+      <div class="kicker"><span lang="en">See it in action</span><span lang="ko">움직이는 모습</span></div>
+      <h2><span lang="en">Open, search, follow a link</span><span lang="ko">열고, 찾고, 링크를 따라가기</span></h2>
+      <video src="img/preview.mp4" poster="img/preview-poster.jpg" autoplay muted loop playsinline preload="metadata" width="1280" height="800" aria-label="Weaverlet demo: quick open, a note with an image, a mind map and the graph view"></video>
     </div>
   </section>
 
