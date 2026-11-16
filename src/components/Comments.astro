@@ -1,0 +1,26 @@
+---
+// giscus.app 에서 Discussions 설정 후 받은 ID를 채운다. 비어 있으면 렌더하지 않는다.
+const REPO = 'jisobkim/jisobkim.github.io';
+const REPO_ID = '';
+const CATEGORY = 'Comments';
+const CATEGORY_ID = '';
+---
+
+{REPO_ID && CATEGORY_ID && (
+	<script
+		is:inline
+		src="https://giscus.app/client.js"
+		data-repo={REPO}
+		data-repo-id={REPO_ID}
+		data-category={CATEGORY}
+		data-category-id={CATEGORY_ID}
+		data-mapping="pathname"
+		data-strict="1"
+		data-reactions-enabled="1"
+		data-input-position="top"
+		data-theme="preferred_color_scheme"
+		data-lang="ko"
+		crossorigin="anonymous"
+		async
+	></script>
+)}
