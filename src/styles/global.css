@@ -89,6 +89,16 @@ input {
 table {
 	width: 100%;
 }
+figure.audio {
+	margin: 1em 0;
+}
+figure.audio audio {
+	width: 100%;
+}
+figure.audio figcaption {
+	font-size: 0.85em;
+	color: rgb(var(--gray));
+}
 img {
 	max-width: 100%;
 	height: auto;

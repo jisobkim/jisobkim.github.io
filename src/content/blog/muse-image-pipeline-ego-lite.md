@@ -128,4 +128,4 @@ if min(size) < MIN_SIDE:
 
 11월 16일에 Muse를 충전하면서 기본 순서를 다시 Muse 먼저(`muse,grok`)로 돌렸다.
 
-다음으로는 RTX 3090에 ComfyUI와 Wan 2.2를 올려서 인물 루프를 로컬에서 만드는 방법을 보고 있다. 아직 해 보지는 않았다. 한도와 브라우저 의존에서 벗어날 수 있는지 확인하려는 단계다.
+그 뒤 11월 하순에 그림과 나레이터 낭독, 인물 움직임을 Mac Studio(M2 Max, 32GB)의 로컬 모델로 옮겼다. Wan 2.2도 RTX 3090 대신 Mac Studio에서 돌렸다. 자세한 내용은 [다음 글](/blog/wan22-mac-studio-mlx/)에 적었다.
