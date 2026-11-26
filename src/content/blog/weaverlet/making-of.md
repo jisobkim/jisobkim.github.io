@@ -13,12 +13,12 @@ tags:
 - iCloud dataless
 - App Store 심사
 - 개인 개발
-heroImage: ./weaverlet-making-of/weaverlet-cover.png
+heroImage: ./making-of/weaverlet-cover.png
 ---
 
 Weaverlet은 내가 만든 Mac용 Markdown 노트 앱이다. 이미 쓰고 있는 폴더를 그대로 열어서 읽고, 찾고, 고친다. 10월 24일에 첫 커밋을 했고 11월 14일에 1.0.2를 App Store 심사에 냈다. 지금은 무료로 공개 중이다. 11월 26일까지 커밋은 487개다.
 
-![지금 쓰는 폴더를 그대로 여는 Weaverlet 첫 화면](<./weaverlet-making-of/weaverlet-01-start-here.png>)
+![지금 쓰는 폴더를 그대로 여는 Weaverlet 첫 화면](<./making-of/weaverlet-01-start-here.png>)
 
 ## 왜 만들었나
 
@@ -34,7 +34,7 @@ Weaverlet은 내가 만든 Mac용 Markdown 노트 앱이다. 이미 쓰고 있�
 
 검색은 SQLite FTS5의 trigram tokenizer를 쓴다. 한국어 형태소 분석기 없이도 단어 중간의 부분 문자열이 잡힌다. 3글자보다 짧은 검색어는 `LIKE`로 훑는다. 내 볼트 규모(약 3천 개, 25MB)에서는 이걸로 충분했다.
 
-![한글 부분 일치까지 되는 검색 화면](<./weaverlet-making-of/weaverlet-04-search.png>)
+![한글 부분 일치까지 되는 검색 화면](<./making-of/weaverlet-04-search.png>)
 
 다음 날 앱 이름을 Weaverlet으로 정했다. 처음에는 계정과 설정 동기화도 만들었다. Google 로그인 옆에 Sign in with Apple을 붙이고 계정 서버도 배포했다. 그런데 첫 스토어 버전 범위를 정리하면서 계정을 뺐다. 11월 11일 커밋에서 계정 기능을 기본으로 꺼 두고, 나중 유료판으로 미뤘다. 첫 버전이 할 일은 "폴더를 열어 읽고, 찾고, 고친다" 하나로 좁혔다.
 
@@ -89,7 +89,7 @@ TestFlight 내부 테스트 초대 메일은 오지 않았다. 내 App Store 계
 
 제출 직전에 걸린 것도 있다. 심사 노트에 "첫 실행에서 샘플 폴더 열기를 누르라"고 적어 두었는데, 정작 앱에는 그 버튼이 없었다. 예제 폴더를 zip으로 첨부하고 노트를 "첨부 폴더를 풀어서 열라"로 바꿨다. 콘텐츠 권한 값은 웹 화면에서 저장이 안 됐고, 심사 정보의 "로그인 필요"가 켜져 있었다. 둘 다 API 오류 메시지를 읽고 찾았다.
 
-![Mermaid 다이어그램을 그대로 보여 주는 화면](<./weaverlet-making-of/weaverlet-03-mermaid.png>)
+![Mermaid 다이어그램을 그대로 보여 주는 화면](<./making-of/weaverlet-03-mermaid.png>)
 
 ## 다음 계획
 

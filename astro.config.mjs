@@ -8,4 +8,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://qn51z.com',
 	integrations: [mdx(), sitemap()],
+	redirects: {
+		'/blog/weaverlet-making-of': '/blog/weaverlet/making-of/',
+	},
 });
