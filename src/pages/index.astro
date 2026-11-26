@@ -29,7 +29,7 @@ const posts = (await getCollection('blog')).sort(
 				display: flex;
 				gap: 1.5rem;
 				align-items: center;
-				padding: 1.75rem 0;
+				padding: 1.5rem 0;
 				color: inherit;
 				text-decoration: none;
 			}
@@ -39,7 +39,7 @@ const posts = (await getCollection('blog')).sort(
 			}
 			.title {
 				margin: 0 0 0.4rem;
-				font-size: 1.3em;
+				font-size: 1.2em;
 			}
 			li a:hover .title {
 				color: var(--accent);
@@ -59,16 +59,23 @@ const posts = (await getCollection('blog')).sort(
 			}
 			.thumb {
 				flex: none;
-				width: 25%;
-				max-width: 160px;
+				width: 30%;
+				max-width: 200px;
 				height: auto;
 				aspect-ratio: 16 / 9;
 				object-fit: cover;
-				border-radius: 8px;
+				border-radius: 6px;
+				border: 1px solid rgb(var(--gray-light));
 			}
 			@media (max-width: 720px) {
+				li a {
+					flex-direction: column-reverse;
+					align-items: stretch;
+					gap: 0.9rem;
+				}
 				.thumb {
-					display: none;
+					width: 100%;
+					max-width: none;
 				}
 			}
 		</style>
@@ -90,7 +97,7 @@ const posts = (await getCollection('blog')).sort(
 									</p>
 								</div>
 								{post.data.heroImage && (
-									<Image class="thumb" width={320} height={180} src={post.data.heroImage} alt="" />
+									<Image class="thumb" width={720} height={405} src={post.data.heroImage} alt="" />
 								)}
 							</a>
 						</li>
