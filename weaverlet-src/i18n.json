@@ -70,7 +70,8 @@
   "A Mermaid diagram shown large in a note": "노트 안에 크게 보이는 Mermaid 다이어그램",
   "Search results across notes": "여러 노트에 걸친 검색 결과",
   "A folder grid with image thumbnails and document previews": "이미지 썸네일과 문서 미리보기가 있는 폴더 격자",
-  "Markdown source and preview side by side": "Markdown 원문과 미리보기를 나란히"
+  "Markdown source and preview side by side": "Markdown 원문과 미리보기를 나란히",
+  "Download": "다운로드"
  },
  "zh-Hans": {
   "Features": "功能",
@@ -143,7 +144,8 @@
   "A Mermaid diagram shown large in a note": "在笔记中放大显示的 Mermaid 图表",
   "Search results across notes": "跨笔记的搜索结果",
   "A folder grid with image thumbnails and document previews": "带图片缩略图和文档预览的文件夹网格",
-  "Markdown source and preview side by side": "Markdown 源文本与预览并排显示"
+  "Markdown source and preview side by side": "Markdown 源文本与预览并排显示",
+  "Download": "下载"
  },
  "es": {
   "Features": "Funciones",
@@ -216,7 +218,8 @@
   "A Mermaid diagram shown large in a note": "Un diagrama de Mermaid mostrado en grande en una nota",
   "Search results across notes": "Resultados de búsqueda en varias notas",
   "A folder grid with image thumbnails and document previews": "Una cuadrícula de carpeta con miniaturas de imágenes y vistas previas de documentos",
-  "Markdown source and preview side by side": "Código Markdown y vista previa lado a lado"
+  "Markdown source and preview side by side": "Código Markdown y vista previa lado a lado",
+  "Download": "Descargar"
  },
  "vi": {
   "Features": "Tính năng",
@@ -289,7 +292,8 @@
   "A Mermaid diagram shown large in a note": "Sơ đồ Mermaid hiển thị lớn trong ghi chú",
   "Search results across notes": "Kết quả tìm kiếm trên nhiều ghi chú",
   "A folder grid with image thumbnails and document previews": "Lưới thư mục với ảnh thu nhỏ và bản xem trước tài liệu",
-  "Markdown source and preview side by side": "Mã nguồn Markdown và bản xem trước song song"
+  "Markdown source and preview side by side": "Mã nguồn Markdown và bản xem trước song song",
+  "Download": "Tải về"
  },
  "ms": {
   "Features": "Ciri",
@@ -362,7 +366,8 @@
   "A Mermaid diagram shown large in a note": "Rajah Mermaid dipaparkan besar dalam nota",
   "Search results across notes": "Hasil carian merentas nota",
   "A folder grid with image thumbnails and document previews": "Grid folder dengan lakaran kecil imej dan pratonton dokumen",
-  "Markdown source and preview side by side": "Sumber Markdown dan pratonton bersebelahan"
+  "Markdown source and preview side by side": "Sumber Markdown dan pratonton bersebelahan",
+  "Download": "Muat turun"
  },
  "id": {
   "Features": "Fitur",
@@ -435,7 +440,8 @@
   "A Mermaid diagram shown large in a note": "Diagram Mermaid ditampilkan besar di dalam catatan",
   "Search results across notes": "Hasil pencarian di seluruh catatan",
   "A folder grid with image thumbnails and document previews": "Kisi folder dengan gambar mini dan pratinjau dokumen",
-  "Markdown source and preview side by side": "Sumber Markdown dan pratinjau berdampingan"
+  "Markdown source and preview side by side": "Sumber Markdown dan pratinjau berdampingan",
+  "Download": "Unduh"
  },
  "pt-BR": {
   "Features": "Recursos",
@@ -508,7 +514,8 @@
   "A Mermaid diagram shown large in a note": "Um diagrama Mermaid exibido em tamanho grande em uma nota",
   "Search results across notes": "Resultados de busca em várias notas",
   "A folder grid with image thumbnails and document previews": "Uma grade de pasta com miniaturas de imagens e pré-visualizações de documentos",
-  "Markdown source and preview side by side": "Código Markdown e pré-visualização lado a lado"
+  "Markdown source and preview side by side": "Código Markdown e pré-visualização lado a lado",
+  "Download": "Baixar"
  },
  "th": {
   "Features": "ฟีเจอร์",
@@ -581,7 +588,8 @@
   "A Mermaid diagram shown large in a note": "ไดอะแกรม Mermaid แสดงขนาดใหญ่ในโน้ต",
   "Search results across notes": "ผลการค้นหาจากหลายโน้ต",
   "A folder grid with image thumbnails and document previews": "ตารางโฟลเดอร์พร้อมภาพย่อรูปภาพและตัวอย่างเอกสาร",
-  "Markdown source and preview side by side": "ซอร์ส Markdown และตัวอย่างแสดงเคียงข้างกัน"
+  "Markdown source and preview side by side": "ซอร์ส Markdown และตัวอย่างแสดงเคียงข้างกัน",
+  "Download": "ดาวน์โหลด"
  },
  "ru": {
   "Features": "Возможности",
@@ -654,7 +662,8 @@
   "A Mermaid diagram shown large in a note": "Крупная диаграмма Mermaid в заметке",
   "Search results across notes": "Результаты поиска по заметкам",
   "A folder grid with image thumbnails and document previews": "Сетка папки с миниатюрами изображений и предпросмотром документов",
-  "Markdown source and preview side by side": "Исходный текст Markdown и предпросмотр рядом"
+  "Markdown source and preview side by side": "Исходный текст Markdown и предпросмотр рядом",
+  "Download": "Скачать"
  },
  "fr": {
   "Features": "Fonctionnalités",
@@ -727,7 +736,8 @@
   "A Mermaid diagram shown large in a note": "Un diagramme Mermaid affiché en grand dans une note",
   "Search results across notes": "Résultats de recherche dans plusieurs notes",
   "A folder grid with image thumbnails and document previews": "Une grille de dossier avec vignettes d’images et aperçus de documents",
-  "Markdown source and preview side by side": "Source Markdown et aperçu côte à côte"
+  "Markdown source and preview side by side": "Source Markdown et aperçu côte à côte",
+  "Download": "Télécharger"
  },
  "de": {
   "Features": "Funktionen",
@@ -800,7 +810,8 @@
   "A Mermaid diagram shown large in a note": "Ein Mermaid-Diagramm groß in einer Notiz",
   "Search results across notes": "Suchergebnisse über mehrere Notizen",
   "A folder grid with image thumbnails and document previews": "Ein Ordnerraster mit Bildminiaturen und Dokumentvorschauen",
-  "Markdown source and preview side by side": "Markdown-Quelltext und Vorschau nebeneinander"
+  "Markdown source and preview side by side": "Markdown-Quelltext und Vorschau nebeneinander",
+  "Download": "Laden"
  },
  "it": {
   "Features": "Funzioni",
@@ -873,6 +884,7 @@
   "A Mermaid diagram shown large in a note": "Un diagramma Mermaid mostrato in grande in una nota",
   "Search results across notes": "Risultati di ricerca tra le note",
   "A folder grid with image thumbnails and document previews": "Una griglia di cartella con miniature di immagini e anteprime di documenti",
-  "Markdown source and preview side by side": "Sorgente Markdown e anteprima affiancate"
+  "Markdown source and preview side by side": "Sorgente Markdown e anteprima affiancate",
+  "Download": "Scarica"
  }
 }

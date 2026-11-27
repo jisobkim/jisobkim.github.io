@@ -76,20 +76,23 @@ img, video { max-width: 100%; height: auto; display: block; }
 .shot video { width: 100%; }
 .wrap { width: min(72rem, 100% - 2rem); margin-inline: auto; }
 
-header.nav {
-  position: sticky; top: 0; z-index: 10;
+header.nav { position: sticky; top: 0.75rem; z-index: 10; margin-top: 0.75rem; }
+.nav .wrap {
+  display: flex; align-items: center; gap: 1.25rem; height: 3.5rem;
+  width: min(60rem, 100% - 2rem); padding: 0 0.5rem 0 1rem;
   background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: saturate(1.4) blur(12px);
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line); border-radius: 999px;
+  box-shadow: 0 0.5rem 1.5rem rgb(28 40 48 / 0.08);
 }
-.nav .wrap { display: flex; align-items: center; gap: 1.25rem; height: 3.75rem; }
+.nav .btn.primary { padding: 0.45rem 1rem; border-radius: 999px; font-size: 0.9rem; }
 .brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.1rem; color: var(--fg); text-decoration: none; }
 .brand img { width: 2rem; height: 2rem; }
 .nav nav { display: flex; gap: 1.25rem; margin-left: auto; align-items: center; }
 .nav nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
 .nav nav a:hover { color: var(--fg); }
 .lang { border: 1px solid var(--line); border-radius: 999px; background: none; color: var(--muted); font: inherit; font-size: 0.85rem; padding: 0.2rem 0.65rem; cursor: pointer; }
-@media (max-width: 40rem) { .nav nav a.opt { display: none; } }
+@media (max-width: 40rem) { .nav nav a.opt, .brand span { display: none; } .nav nav { gap: 0.5rem; } }
 
 .btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -102,12 +105,12 @@ header.nav {
 .btn.ghost.link { cursor: pointer; }
 
 .hero {
-  padding: 5rem 0 3rem;
+  padding: 8rem 0 3rem; margin-top: -4.25rem;
   background: linear-gradient(180deg, var(--soft) 0%, var(--bg) 70%);
   text-align: center;
 }
 .hero .icon { width: 6rem; height: 6rem; margin: 0 auto 1.5rem; }
-.hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 1rem; }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 1rem; }
 .hero p.sub { font-size: clamp(1.1rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 40rem; margin: 0 auto 2rem; }
 .cta { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
 .hero small { display: block; margin-top: 1rem; color: var(--muted); font-size: 0.9rem; }
@@ -119,23 +122,15 @@ header.nav {
 .fact b { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
 .fact span { color: var(--muted); font-size: 0.95rem; }
 
-section.feature { padding: 5rem 0; }
-section.feature + section.feature { border-top: 1px solid var(--line); }
-.feature .wrap { display: grid; grid-template-columns: 1fr 1.35fr; gap: 3.5rem; align-items: center; }
-.feature.flip .wrap { grid-template-columns: 1.35fr 1fr; }
-.feature.flip .text { order: 2; }
-@media (max-width: 52rem) {
-  .feature .wrap, .feature.flip .wrap { grid-template-columns: 1fr; gap: 2rem; }
-  .hero h1 br { display: none; }
-  .feature.flip .text { order: 0; }
-}
-.kicker { color: var(--accent-text); font-weight: 650; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.feature h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); line-height: 1.2; letter-spacing: -0.01em; margin: 0.4rem 0 1rem; }
-.feature p { color: var(--muted); margin: 0 0 1rem; }
-.feature ul { margin: 0; padding: 0; list-style: none; }
-.feature li { padding: 0.35rem 0 0.35rem 1.4rem; position: relative; }
-.feature li::before { content: ""; position: absolute; left: 0.2rem; top: 0.95rem; width: 0.55rem; height: 2px; background: var(--teal); }
-.pair { display: grid; gap: 1rem; }
+section.feature { padding: 6rem 0 2rem; text-align: center; }
+.feature .text { max-width: 46rem; margin: 0 auto 2.5rem; }
+.feature .shot { max-width: 64rem; margin-inline: auto; }
+.kicker { color: var(--accent-text); font-weight: 650; font-size: 0.9rem; letter-spacing: 0.04em; }
+.kicker .num { font-family: ui-monospace, "SF Mono", Menlo, monospace; margin-right: 0.5rem; }
+.feature h2 { font-size: clamp(2rem, 4.8vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0.5rem 0 1rem; }
+.feature p { color: var(--muted); font-size: 1.1rem; margin: 0 0 1.25rem; }
+.feature ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+.feature li { padding: 0.3rem 0.85rem; border: 1px solid var(--line); border-radius: 999px; font-size: 0.92rem; }
 
 .privacy { background: var(--ink); color: #e8eef0; padding: 5rem 0; }
 .privacy .wrap { max-width: 46rem; text-align: center; }
@@ -155,6 +150,19 @@ details p { color: var(--muted); margin: 0.6rem 0 0; }
 .final { text-align: center; padding: 4rem 0 5rem; background: linear-gradient(0deg, var(--soft) 0%, var(--bg) 100%); }
 .final h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0 0 1.5rem; }
 
+.dock {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 10;
+  display: flex; align-items: center; gap: 0.75rem; padding: 0.4rem 0.4rem 0.4rem 0.6rem;
+  background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(12px);
+  border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow);
+  font-weight: 650; transition: opacity 0.2s, translate 0.2s;
+}
+.dock img { width: 2rem; height: 2rem; }
+.dock .btn { padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.9rem; }
+.dock[hidden] { display: flex; opacity: 0; translate: 0 1rem; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
+@media (max-width: 40rem) { .dock .name { display: none; } }
+
 footer { border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: 0.9rem; }
 footer .wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
 footer a { color: var(--muted); }
@@ -165,12 +173,13 @@ footer .copy { margin-left: auto; }
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="https://qn51z.com/weaverlet/ru/"><img src="/weaverlet/img/icon-256.png" alt="">Weaverlet</a>
+    <a class="brand" href="https://qn51z.com/weaverlet/ru/"><img src="/weaverlet/img/icon-256.png" alt=""><span>Weaverlet</span></a>
     <nav>
       <a class="opt" href="#features">Возможности</a>
       <a class="opt" href="#faq">FAQ</a>
       <a class="opt" href="/weaverlet/support/">Поддержка</a>
       <select class="lang" aria-label="Language"><option value="en" data-href="https://qn51z.com/weaverlet/">English</option><option value="ko" data-href="https://qn51z.com/weaverlet/ko/">한국어</option><option value="zh-Hans" data-href="https://qn51z.com/weaverlet/zh-hans/">简体中文</option><option value="es" data-href="https://qn51z.com/weaverlet/es/">Español</option><option value="vi" data-href="https://qn51z.com/weaverlet/vi/">Tiếng Việt</option><option value="ms" data-href="https://qn51z.com/weaverlet/ms/">Bahasa Melayu</option><option value="id" data-href="https://qn51z.com/weaverlet/id/">Bahasa Indonesia</option><option value="pt-BR" data-href="https://qn51z.com/weaverlet/pt-br/">Português (Brasil)</option><option value="th" data-href="https://qn51z.com/weaverlet/th/">ไทย</option><option value="ru" data-href="https://qn51z.com/weaverlet/ru/" selected>Русский</option><option value="fr" data-href="https://qn51z.com/weaverlet/fr/">Français</option><option value="de" data-href="https://qn51z.com/weaverlet/de/">Deutsch</option><option value="it" data-href="https://qn51z.com/weaverlet/it/">Italiano</option></select>
+      <a class="btn primary" href="https://apps.apple.com/app/id6833345636">Скачать</a>
     </nav>
   </div>
 </header>
@@ -207,7 +216,7 @@ footer .copy { margin-left: auto; }
   <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker">Связанные заметки</div>
+        <div class="kicker"><span class="num">01</span>Связанные заметки</div>
         <h2>Следуйте за мыслью от заметки к заметке</h2>
         <p>Вики-ссылки работают так, как вы их уже пишете. У каждой заметки прямо рядом со страницей видно, какие заметки на неё ссылаются.</p>
         <ul>
@@ -220,10 +229,10 @@ footer .copy { margin-left: auto; }
     </div>
   </section>
 
-  <section class="feature flip">
+  <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker">Диаграммы</div>
+        <div class="kicker"><span class="num">02</span>Диаграммы</div>
         <h2>Увидеть форму идеи</h2>
         <p>Диаграммы Mermaid показываются достаточно крупно, чтобы их читать. Списки превращаются в интеллект-карты, не выходя из Markdown.</p>
         <ul>
@@ -232,16 +241,14 @@ footer .copy { margin-left: auto; }
           <li>Показ любой заметки как слайдов</li>
         </ul>
       </div>
-      <div class="pair">
-        <div class="shot"><img src="/weaverlet/img/04-mermaid.jpg" alt="Крупная диаграмма Mermaid в заметке" width="1800" height="1125" loading="lazy"></div>
-      </div>
+      <div class="shot"><img src="/weaverlet/img/04-mermaid.jpg" alt="Крупная диаграмма Mermaid в заметке" width="1800" height="1125" loading="lazy"></div>
     </div>
   </section>
 
   <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker">Поиск</div>
+        <div class="kicker"><span class="num">03</span>Поиск</div>
         <h2>Найдите раньше, чем допечатаете</h2>
         <p>Полнотекстовый поиск по всем заметкам, с частичными совпадениями, которые работают и для корейского, китайского и японского.</p>
         <ul>
@@ -254,10 +261,10 @@ footer .copy { margin-left: auto; }
     </div>
   </section>
 
-  <section class="feature flip">
+  <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker">Не только Markdown</div>
+        <div class="kicker"><span class="num">04</span>Не только Markdown</div>
         <h2>Всё из папки в одном окне</h2>
         <p>PDF рядом с заметками, таблица с совещания, корейский отчёт в HWP. Открывайте их, не переключаясь между приложениями.</p>
         <ul>
@@ -273,7 +280,7 @@ footer .copy { margin-left: auto; }
   <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker">Письмо</div>
+        <div class="kicker"><span class="num">05</span>Письмо</div>
         <h2>Исправьте фразу там, где читаете</h2>
         <p>Нажмите на любой абзац, чтобы править его Markdown прямо на месте, или откройте редактор с живым предпросмотром рядом.</p>
         <ul>
@@ -336,6 +343,11 @@ footer .copy { margin-left: auto; }
   </div>
 </footer>
 
+<div class="dock" hidden>
+  <img src="/weaverlet/img/icon-256.png" alt=""><span class="name">Weaverlet</span>
+  <a class="btn primary" href="https://apps.apple.com/app/id6833345636">Загрузите в Mac App Store</a>
+</div>
+
 <script>
 (function () {
   // 자동 재생이 막힌 브라우저(저전력 모드·사이트 설정)에서는 직접 재생하고, 그래도 막히면 재생 버튼을 보인다
@@ -345,6 +357,15 @@ footer .copy { margin-left: auto; }
     var p = hero.play();
     if (p && p.catch) p.catch(function () { hero.controls = true; });
   }
+  // 첫 화면·마지막 받기 버튼이 보이는 동안은 아래 칩을 숨긴다
+  var dock = document.querySelector(".dock");
+  var shown = new Set();
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? shown.add(e.target) : shown.delete(e.target); });
+    dock.hidden = shown.size > 0;
+  });
+  io.observe(document.querySelector(".hero .cta"));
+  io.observe(document.querySelector(".final .btn"));
   // 언어 선택은 기억해 두고, 첫 페이지에서만 기억한 언어나 브라우저 언어로 보낸다 (검색 로봇은 영어 그대로)
   var pick = document.querySelector("select.lang");
   pick.addEventListener("change", function () {
