@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weaverlet: Mac 上的 Markdown 笔记</title>
+<meta name="description" content="Weaverlet 直接打开你已有的 Markdown 文件夹。Wiki 链接、反向链接、Mermaid、快速搜索，以及 PDF 和办公文档查看器。无需导入，无需账户。">
+<link rel="canonical" href="https://qn51z.com/weaverlet/zh-hans/">
+<link rel="alternate" hreflang="en" href="https://qn51z.com/weaverlet/">
+<link rel="alternate" hreflang="ko" href="https://qn51z.com/weaverlet/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://qn51z.com/weaverlet/zh-hans/">
+<link rel="alternate" hreflang="es" href="https://qn51z.com/weaverlet/es/">
+<link rel="alternate" hreflang="vi" href="https://qn51z.com/weaverlet/vi/">
+<link rel="alternate" hreflang="ms" href="https://qn51z.com/weaverlet/ms/">
+<link rel="alternate" hreflang="id" href="https://qn51z.com/weaverlet/id/">
+<link rel="alternate" hreflang="pt-BR" href="https://qn51z.com/weaverlet/pt-br/">
+<link rel="alternate" hreflang="th" href="https://qn51z.com/weaverlet/th/">
+<link rel="alternate" hreflang="ru" href="https://qn51z.com/weaverlet/ru/">
+<link rel="alternate" hreflang="fr" href="https://qn51z.com/weaverlet/fr/">
+<link rel="alternate" hreflang="de" href="https://qn51z.com/weaverlet/de/">
+<link rel="alternate" hreflang="it" href="https://qn51z.com/weaverlet/it/">
+<link rel="alternate" hreflang="x-default" href="https://qn51z.com/weaverlet/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="Weaverlet: Mac 上的 Markdown 笔记">
+<meta property="og:description" content="打开你已有的 Markdown 文件夹。无需导入，无需账户。">
+<meta property="og:image" content="https://qn51z.com/weaverlet/img/og-image-1200x630.png">
+<meta property="og:url" content="https://qn51z.com/weaverlet/zh-hans/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Weaverlet", "description": "Weaverlet 直接打开你已有的 Markdown 文件夹。Wiki 链接、反向链接、Mermaid、快速搜索，以及 PDF 和办公文档查看器。无需导入，无需账户。", "inLanguage": "zh-Hans", "operatingSystem": "macOS 12 or later", "applicationCategory": "UtilitiesApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "downloadUrl": "https://apps.apple.com/app/id6833345636", "url": "https://qn51z.com/weaverlet/zh-hans/", "image": "https://qn51z.com/weaverlet/img/og-image-1200x630.png"}</script>
+<link rel="icon" href="/weaverlet/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/weaverlet/img/apple-touch-icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --teal: #00BCA6;
+  --teal-deep: #00796B;
+  --teal-light: #5ee0cf;
+  --mist-1: #EEF4F6;
+  --mist-2: #DCE7EB;
+  --ink: #1C2830;
+  --paper: #FFFFFF;
+  --warp: #B8C5CC;
+  --muted: #4a5a63;
+  --bg: var(--paper);
+  --fg: var(--ink);
+  --soft: var(--mist-1);
+  --accent-text: var(--teal-deep);
+  --line: #d9e1e5;
+  --shadow: 0 1.5rem 4rem rgb(28 40 48 / 0.18), 0 0 0 1px rgb(28 40 48 / 0.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12191e;
+    --fg: #e8eef0;
+    --soft: #1a242a;
+    --accent-text: var(--teal-light);
+    --muted: #a3b2b9;
+    --line: #2a363d;
+    --shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.5), 0 0 0 1px rgb(255 255 255 / 0.06);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 1.0625rem/1.65 "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+html[lang^="zh"] body, html[lang="th"] body { word-break: normal; }
+a { color: var(--accent-text); }
+img, video { max-width: 100%; height: auto; display: block; }
+.shot video { width: 100%; }
+.wrap { width: min(72rem, 100% - 2rem); margin-inline: auto; }
+
+header.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; gap: 1.25rem; height: 3.75rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.1rem; color: var(--fg); text-decoration: none; }
+.brand img { width: 2rem; height: 2rem; }
+.nav nav { display: flex; gap: 1.25rem; margin-left: auto; align-items: center; }
+.nav nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+.nav nav a:hover { color: var(--fg); }
+.lang { border: 1px solid var(--line); border-radius: 999px; background: none; color: var(--muted); font: inherit; font-size: 0.85rem; padding: 0.2rem 0.65rem; cursor: pointer; }
+@media (max-width: 40rem) { .nav nav a.opt { display: none; } }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.4rem; border-radius: 0.75rem;
+  font-weight: 650; text-decoration: none; font-size: 1rem;
+}
+.btn.primary { background: var(--teal); color: var(--ink); }
+.btn.primary:hover { background: var(--teal-light); }
+.btn.ghost { color: var(--muted); border: 1px solid var(--line); cursor: default; }
+.btn.ghost.link { cursor: pointer; }
+
+.hero {
+  padding: 5rem 0 3rem;
+  background: linear-gradient(180deg, var(--soft) 0%, var(--bg) 70%);
+  text-align: center;
+}
+.hero .icon { width: 6rem; height: 6rem; margin: 0 auto 1.5rem; }
+.hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 1rem; }
+.hero p.sub { font-size: clamp(1.1rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 40rem; margin: 0 auto 2rem; }
+.cta { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.hero small { display: block; margin-top: 1rem; color: var(--muted); font-size: 0.9rem; }
+.shot { border-radius: 0.9rem; box-shadow: var(--shadow); overflow: hidden; background: var(--ink); }
+.hero .shot { margin: 3.5rem auto 0; max-width: 64rem; }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; padding: 3rem 0 1rem; }
+.fact { padding: 1.25rem 1.4rem; border: 1px solid var(--line); border-radius: 0.9rem; }
+.fact b { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
+.fact span { color: var(--muted); font-size: 0.95rem; }
+
+section.feature { padding: 5rem 0; }
+section.feature + section.feature { border-top: 1px solid var(--line); }
+.feature .wrap { display: grid; grid-template-columns: 1fr 1.35fr; gap: 3.5rem; align-items: center; }
+.feature.flip .wrap { grid-template-columns: 1.35fr 1fr; }
+.feature.flip .text { order: 2; }
+@media (max-width: 52rem) {
+  .feature .wrap, .feature.flip .wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .hero h1 br { display: none; }
+  .feature.flip .text { order: 0; }
+}
+.kicker { color: var(--accent-text); font-weight: 650; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.feature h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); line-height: 1.2; letter-spacing: -0.01em; margin: 0.4rem 0 1rem; }
+.feature p { color: var(--muted); margin: 0 0 1rem; }
+.feature ul { margin: 0; padding: 0; list-style: none; }
+.feature li { padding: 0.35rem 0 0.35rem 1.4rem; position: relative; }
+.feature li::before { content: ""; position: absolute; left: 0.2rem; top: 0.95rem; width: 0.55rem; height: 2px; background: var(--teal); }
+.pair { display: grid; gap: 1rem; }
+
+.privacy { background: var(--ink); color: #e8eef0; padding: 5rem 0; }
+.privacy .wrap { max-width: 46rem; text-align: center; }
+.privacy h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0.4rem 0 1rem; }
+.privacy p { color: #b9c7cd; margin: 0; }
+.privacy .kicker { color: var(--teal-light); }
+
+.faq { padding: 5rem 0; }
+.faq .wrap { max-width: 46rem; }
+.faq h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0 0 1.5rem; }
+details { border-bottom: 1px solid var(--line); padding: 1rem 0; }
+summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+summary::after { content: "+"; color: var(--muted); }
+details[open] summary::after { content: "−"; }
+details p { color: var(--muted); margin: 0.6rem 0 0; }
+
+.final { text-align: center; padding: 4rem 0 5rem; background: linear-gradient(0deg, var(--soft) 0%, var(--bg) 100%); }
+.final h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0 0 1.5rem; }
+
+footer { border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: 0.9rem; }
+footer .wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+footer a { color: var(--muted); }
+footer .copy { margin-left: auto; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="https://qn51z.com/weaverlet/zh-hans/"><img src="/weaverlet/img/icon-256.png" alt="">Weaverlet</a>
+    <nav>
+      <a class="opt" href="#features">功能</a>
+      <a class="opt" href="#faq">FAQ</a>
+      <a class="opt" href="/weaverlet/support/">支持</a>
+      <select class="lang" aria-label="Language"><option value="en" data-href="https://qn51z.com/weaverlet/">English</option><option value="ko" data-href="https://qn51z.com/weaverlet/ko/">한국어</option><option value="zh-Hans" data-href="https://qn51z.com/weaverlet/zh-hans/" selected>简体中文</option><option value="es" data-href="https://qn51z.com/weaverlet/es/">Español</option><option value="vi" data-href="https://qn51z.com/weaverlet/vi/">Tiếng Việt</option><option value="ms" data-href="https://qn51z.com/weaverlet/ms/">Bahasa Melayu</option><option value="id" data-href="https://qn51z.com/weaverlet/id/">Bahasa Indonesia</option><option value="pt-BR" data-href="https://qn51z.com/weaverlet/pt-br/">Português (Brasil)</option><option value="th" data-href="https://qn51z.com/weaverlet/th/">ไทย</option><option value="ru" data-href="https://qn51z.com/weaverlet/ru/">Русский</option><option value="fr" data-href="https://qn51z.com/weaverlet/fr/">Français</option><option value="de" data-href="https://qn51z.com/weaverlet/de/">Deutsch</option><option value="it" data-href="https://qn51z.com/weaverlet/it/">Italiano</option></select>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <img class="icon" src="/weaverlet/img/icon-256.png" alt="Weaverlet 图标">
+      <h1>
+        你的 Markdown 文件夹，<br>打开就能读。
+      </h1>
+      <p class="sub">
+        Weaverlet 直接打开你 Mac 上已有的笔记。无需导入，无需账户。链接、图表、PDF 和文档，都在一个安静的窗口里。
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="https://apps.apple.com/app/id6833345636">
+          在 Mac App Store 下载
+        </a>
+        <a class="btn ghost link" href="https://testflight.apple.com/join/fDUZVCBV">试用测试版</a>
+      </div>
+      <small>
+        免费 · macOS 12 或更高版本 · Apple 芯片
+      </small>
+      <div class="shot"><video src="/weaverlet/img/preview.mp4?v=3" poster="/weaverlet/img/preview-poster.jpg?v=3" autoplay muted loop playsinline preload="auto" width="1280" height="720" aria-label="Weaverlet：快速打开、带图片的笔记、思维导图和图谱视图"></video></div>
+
+      <div class="facts" id="features">
+        <div class="fact"><b>文件保持原样</b><span>笔记仍是文件夹里普通的 .md 文件。无需迁移，也不会被锁定。</span></div>
+        <div class="fact"><b>无需账户，不做追踪</b><span>Weaverlet 不收集数据。你的笔记不会离开你的文件夹。</span></div>
+        <div class="fact"><b>大文件夹也很快</b><span>数千篇笔记也能快速打开，搜索还能找到中文、日文和韩文的部分匹配。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">相连的笔记</div>
+        <h2>顺着一个想法，从一篇笔记走到下一篇</h2>
+        <p>Wiki 链接按你习惯的写法工作。每篇笔记旁边都能看到哪些笔记指向它。</p>
+        <ul>
+          <li>每篇笔记的反向链接和出链</li>
+          <li>重命名或移动笔记，所有链接随之更新</li>
+          <li>标签、标注块和 frontmatter 属性</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/05-backlinks.jpg" alt="侧边栏列出反向链接的笔记" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature flip">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">图表</div>
+        <h2>看见想法的形状</h2>
+        <p>Mermaid 图表以便于阅读的大尺寸显示。大纲无需离开 Markdown 就能变成思维导图。</p>
+        <ul>
+          <li>缩放、平移、全屏和放映</li>
+          <li>出错时指出出错的那一行</li>
+          <li>任何笔记都能以幻灯片放映</li>
+        </ul>
+      </div>
+      <div class="pair">
+        <div class="shot"><img src="/weaverlet/img/04-mermaid.jpg" alt="在笔记中放大显示的 Mermaid 图表" width="1800" height="1125" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">搜索</div>
+        <h2>还没打完字就找到</h2>
+        <p>全文搜索所有笔记，中文、日文和韩文也支持部分匹配。</p>
+        <ul>
+          <li>快速打开和命令面板</li>
+          <li>在笔记内查找和替换</li>
+          <li>可更改的键盘快捷键</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/06-search.jpg" alt="跨笔记的搜索结果" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature flip">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">不止 Markdown</div>
+        <h2>文件夹里的一切，一个窗口</h2>
+        <p>笔记旁的 PDF、会议上拿到的表格、韩国的 HWP 报告，无需切换应用即可打开。</p>
+        <ul>
+          <li>PDF, DOCX, PPTX, XLSX, CSV, HWP</li>
+          <li>图片、视频和源代码</li>
+          <li>从 Finder 拖入文件即可添加并打开</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/07-grid.jpg" alt="带图片缩略图和文档预览的文件夹网格" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">写作</div>
+        <h2>在读到的地方直接修改</h2>
+        <p>点击任意段落即可就地编辑它的 Markdown，也可以打开编辑器，旁边同时显示实时预览。</p>
+        <ul>
+          <li>30 天版本历史，只保存在你的 Mac 上</li>
+          <li>图片直接粘贴进笔记</li>
+          <li>每个文件夹按你的方式排序，入口笔记置顶</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/08-side-by-side.jpg" alt="Markdown 源文本与预览并排显示" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="privacy">
+    <div class="wrap">
+      <div class="kicker">隐私</div>
+      <h2>你的笔记属于你</h2>
+      <p>无需注册，没有分析，没有广告。Weaverlet 只读取你选择的文件夹，历史记录保存在你的 Mac 上。App Store 隐私标签显示为“未收集数据”。 <a href="/weaverlet/privacy/">隐私政策</a></p>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2>常见问题</h2>
+      <details>
+        <summary>免费吗？</summary>
+        <p>是的。第一个版本免费，没有 App 内购买。以后可能推出支持 Mac 之间同步的付费方案，免费 App 会一直保留。</p>
+      </details>
+      <details>
+        <summary>会改动我现有的笔记吗？</summary>
+        <p>只有你编辑时才会。Weaverlet 按原样读取你的文件夹，各文件夹的排序规则存放在一个小小的隐藏 .weaver 文件夹里。用其他 Markdown 应用创建的文件夹也能一起正常打开。</p>
+      </details>
+      <details>
+        <summary>支持 iCloud Drive 吗？</summary>
+        <p>支持。打开 iCloud Drive 中的文件夹，就能在你的每台 Mac 上使用。只存在于云端的笔记会在打开时下载。</p>
+      </details>
+      <details>
+        <summary>需要什么条件？</summary>
+        <p>搭载 Apple 芯片并运行 macOS 12 或更高版本的 Mac。App 支持 13 种语言。</p>
+      </details>
+      <details>
+        <summary>如何反馈意见？</summary>
+        <p>你可以在 App Store 留下评价，或通过 <a href="/weaverlet/support/">支持页面</a>联系我们。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>打开你的文件夹，开始阅读。</h2>
+      <a class="btn primary" href="https://apps.apple.com/app/id6833345636">在 Mac App Store 下载</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/weaverlet/support/">支持</a>
+    <a href="/weaverlet/privacy/">隐私</a>
+    <span class="copy">© 2026 JISUB KIM</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 자동 재생이 막힌 브라우저(저전력 모드·사이트 설정)에서는 직접 재생하고, 그래도 막히면 재생 버튼을 보인다
+  var hero = document.querySelector(".hero video");
+  if (hero) {
+    hero.muted = true;
+    var p = hero.play();
+    if (p && p.catch) p.catch(function () { hero.controls = true; });
+  }
+  // 언어 선택은 기억해 두고, 첫 페이지에서만 기억한 언어나 브라우저 언어로 보낸다 (검색 로봇은 영어 그대로)
+  var pick = document.querySelector("select.lang");
+  pick.addEventListener("change", function () {
+    try { localStorage.setItem("weaverlet-lang", pick.value); } catch (e) {}
+    location.href = pick.selectedOptions[0].dataset.href;
+  });
+  if (document.documentElement.lang !== "en") return;
+  var saved = null;
+  try { saved = localStorage.getItem("weaverlet-lang"); } catch (e) {}
+  var nav = (navigator.language || "").toLowerCase();
+  var want = saved || [].map.call(pick.options, function (o) { return o.value; }).filter(function (v) {
+    var l = v.toLowerCase();
+    return l === "zh-hans" ? /^zh-(hans|cn|sg)/.test(nav) : l === "pt-br" ? /^pt/.test(nav) : nav.split("-")[0] === l;
+  })[0];
+  var go = want && pick.querySelector('option[value="' + want + '"]');
+  if (go && want !== "en") location.replace(go.dataset.href);
+})();
+</script>
+</body>
+</html>
