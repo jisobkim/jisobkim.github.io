@@ -54,7 +54,6 @@
   "Does it work with iCloud Drive?": "iCloud Drive에서도 되나요?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "네. iCloud Drive의 폴더를 열어 여러 Mac에서 쓸 수 있습니다. 클라우드에만 있는 노트는 열 때 내려받습니다.",
   "What do I need?": "무엇이 필요한가요?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Apple 실리콘 Mac과 macOS 12 이상. 13개 언어를 지원합니다.",
   "How do I send feedback?": "의견은 어디로 보내나요?",
   "Leave a review on the App Store, or write to us from the": "App Store에 리뷰를 남기거나,",
   "support page": "지원 페이지",
@@ -71,7 +70,82 @@
   "Search results across notes": "여러 노트에 걸친 검색 결과",
   "A folder grid with image thumbnails and document previews": "이미지 썸네일과 문서 미리보기가 있는 폴더 격자",
   "Markdown source and preview side by side": "Markdown 원문과 미리보기를 나란히",
-  "Download": "다운로드"
+  "Download": "다운로드",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Apple 실리콘 Mac과 macOS 12 이상. 14개 언어를 지원합니다."
+ },
+ "ja": {
+  "Features": "機能",
+  "Support": "サポート",
+  "Your Markdown folder,<br>ready to read.": "いつものMarkdownフォルダを、<br>そのまま開く。",
+  "Weaverlet opens the notes you already keep on your Mac. No import, no account. Links, diagrams, PDFs and documents in one calm window.": "WeaverletはMacにあるノートのフォルダを、インポートもアカウント登録もなしで開きます。リンク、図、PDF、書類を落ち着いたひとつのウインドウで。",
+  "Download on the Mac App Store": "Mac App Storeからダウンロード",
+  "Try the beta": "ベータ版を試す",
+  "Free · macOS 12 or later · Apple silicon": "無料 · macOS 12以降 · Appleシリコン",
+  "Plain files stay plain": "ファイルはそのまま",
+  "Notes remain ordinary .md files in your folders. Nothing to migrate, nothing locked in.": "ノートはフォルダの中の普通の.mdファイルのままです。移行の手間も、囲い込みもありません。",
+  "No account, no tracking": "アカウントも追跡もなし",
+  "Weaverlet doesn't collect data. Your notes never leave your folders.": "Weaverletはデータを収集しません。ノートがフォルダの外に出ることはありません。",
+  "Fast on big folders": "大きなフォルダでも速い",
+  "Thousands of notes open quickly, and search finds partial matches in Korean, Chinese and Japanese.": "数千件のノートもすばやく開き、日本語・中国語・韓国語の部分一致でも検索できます。",
+  "Connected notes": "つながるノート",
+  "Follow a thought from note to note": "考えをノートからノートへたどる",
+  "Wikilinks work the way you already write them. Every note shows what points back to it, right beside the page.": "ウィキリンクはいつもの書き方のまま動きます。そのノートを参照しているノートが、ページのすぐ横に表示されます。",
+  "Backlinks and outgoing links for every note": "ノートごとのバックリンクと発リンク",
+  "Rename or move a note and links update everywhere": "名前の変更や移動に合わせてリンクも更新",
+  "Tags, callouts and frontmatter properties": "タグ、コールアウト、frontmatterプロパティ",
+  "Diagrams": "図",
+  "See the shape of an idea": "考えの形を見る",
+  "Mermaid diagrams render big enough to read. Outlines turn into mind maps without leaving Markdown.": "Mermaidの図を読める大きさで表示します。箇条書きはMarkdownのままマインドマップになります。",
+  "Zoom, pan, full screen and present": "拡大、移動、フルスクリーン、プレゼン",
+  "Errors point to the line that broke": "エラーは問題のある行まで示す",
+  "Present any note as slides": "どのノートもスライドとして発表",
+  "Search": "検索",
+  "Find it before you finish typing": "入力し終える前に見つかる",
+  "Full-text search across every note, with partial matches that work for Korean, Chinese and Japanese too.": "すべてのノートを本文まで検索。日本語・中国語・韓国語の部分一致にも対応しています。",
+  "Quick open and a command palette": "クイックオープンとコマンドパレット",
+  "Find and replace inside a note": "ノート内の検索と置換",
+  "Keyboard shortcuts you can change": "変更できるキーボードショートカット",
+  "Beyond Markdown": "Markdownの外へ",
+  "Everything in the folder, one window": "フォルダの中身を、ひとつのウインドウで",
+  "The PDF next to your notes, the spreadsheet from a meeting, a Korean HWP report. Open them without switching apps.": "ノートの隣のPDF、会議でもらった表、韓国のHWP文書まで。アプリを切り替えずに開けます。",
+  "Images, video and source code": "画像、動画、ソースコード",
+  "Drop files from Finder to add and open them": "Finderからドロップして追加・表示",
+  "Writing": "書く",
+  "Fix a sentence where you read it": "読んでいる場所でそのまま直す",
+  "Click any paragraph to edit its Markdown in place, or open the editor with a live preview beside it.": "段落をクリックするとその場でMarkdownを編集できます。プレビューを横に並べたエディタも開けます。",
+  "Version history on your Mac for 30 days": "30日分のバージョン履歴をMacの中に",
+  "Paste images straight into a note": "画像をノートに直接ペースト",
+  "Sort each folder your way, with an entry note on top": "フォルダごとに好きな並び順、先頭に入口ノート",
+  "Privacy": "プライバシー",
+  "Your notes are yours": "ノートはあなたのもの",
+  "No sign-up, no analytics, no ads. Weaverlet reads the folders you choose and keeps history on your Mac. The App Store label reads “Data Not Collected.”": "登録も分析も広告もありません。Weaverletは選んだフォルダだけを読み、履歴はMacの中に残します。App Storeのラベルは「データの収集なし」です。",
+  "Privacy policy": "プライバシーポリシー",
+  "Questions": "よくある質問",
+  "Is it free?": "無料ですか?",
+  "Yes. The first version is free with no in-app purchases. A paid plan with sync between Macs may come later; the free app stays.": "はい。最初のバージョンは無料で、App内課金もありません。将来、複数のMac間で同期できる有料プランを出すかもしれませんが、無料のアプリはそのまま残ります。",
+  "Will it change my existing notes?": "今あるノートが変わりませんか?",
+  "Only when you edit them. Weaverlet reads your folder as it is; per-folder sort rules live in a small hidden .weaver folder. Folders made with other Markdown apps open fine side by side.": "自分で編集したときだけ変わります。フォルダはそのまま読み込み、フォルダごとの並び順のルールだけを小さな隠しフォルダ.weaverに保存します。ほかのMarkdownアプリで使っているフォルダも並行して開けます。",
+  "Does it work with iCloud Drive?": "iCloud Driveでも使えますか?",
+  "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "はい。iCloud Driveのフォルダを開けば、それぞれのMacで使えます。クラウドにだけあるノートは、開いたときにダウンロードされます。",
+  "What do I need?": "必要な環境は?",
+  "How do I send feedback?": "意見はどこに送ればいいですか?",
+  "Leave a review on the App Store, or write to us from the": "App Storeにレビューを書くか、",
+  "support page": "サポートページ",
+  ".": "からご連絡ください。",
+  "Open your folder and start reading.": "フォルダを開いて、読みはじめましょう。",
+  "__title": "Weaverlet: Mac用のMarkdownノート",
+  "__description": "Weaverletは今使っているMarkdownフォルダをそのまま開きます。ウィキリンク、バックリンク、Mermaid、すばやい検索、PDFやOffice書類のビューア。インポートもアカウント登録も不要です。",
+  "__og_description": "今使っているMarkdownフォルダを、インポートもアカウント登録もなしでそのまま開きます。",
+  "__lang_name": "日本語",
+  "Weaverlet icon": "Weaverletのアイコン",
+  "Weaverlet: quick open, a note with an image, a mind map and the graph view": "Weaverlet: クイックオープン、画像入りのノート、マインドマップ、グラフビュー",
+  "A note with its backlinks listed in the side panel": "サイドパネルにバックリンクが並んだノート",
+  "A Mermaid diagram shown large in a note": "ノートの中に大きく表示されたMermaidの図",
+  "Search results across notes": "複数のノートにまたがる検索結果",
+  "A folder grid with image thumbnails and document previews": "画像のサムネールと書類のプレビューが並ぶフォルダのグリッド",
+  "Markdown source and preview side by side": "Markdownのソースとプレビューを並べて表示",
+  "Download": "ダウンロード",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Appleシリコン搭載のMacとmacOS 12以降。アプリは14の言語に対応しています。"
  },
  "zh-Hans": {
   "Features": "功能",
@@ -128,7 +202,6 @@
   "Does it work with iCloud Drive?": "支持 iCloud Drive 吗？",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "支持。打开 iCloud Drive 中的文件夹，就能在你的每台 Mac 上使用。只存在于云端的笔记会在打开时下载。",
   "What do I need?": "需要什么条件？",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "搭载 Apple 芯片并运行 macOS 12 或更高版本的 Mac。App 支持 13 种语言。",
   "How do I send feedback?": "如何反馈意见？",
   "Leave a review on the App Store, or write to us from the": "你可以在 App Store 留下评价，或通过",
   "support page": "支持页面",
@@ -145,7 +218,8 @@
   "Search results across notes": "跨笔记的搜索结果",
   "A folder grid with image thumbnails and document previews": "带图片缩略图和文档预览的文件夹网格",
   "Markdown source and preview side by side": "Markdown 源文本与预览并排显示",
-  "Download": "下载"
+  "Download": "下载",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "搭载 Apple 芯片并运行 macOS 12 或更高版本的 Mac。App 支持 14 种语言。"
  },
  "es": {
   "Features": "Funciones",
@@ -202,7 +276,6 @@
   "Does it work with iCloud Drive?": "¿Funciona con iCloud Drive?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Sí. Abre una carpeta de iCloud Drive y úsala en cada uno de tus Macs. Las notas que solo están en la nube se descargan al abrirlas.",
   "What do I need?": "¿Qué necesito?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Un Mac con chip de Apple y macOS 12 o posterior. La app está disponible en 13 idiomas.",
   "How do I send feedback?": "¿Cómo envío comentarios?",
   "Leave a review on the App Store, or write to us from the": "Deja una reseña en el App Store o escríbenos desde la",
   "support page": "página de soporte",
@@ -219,7 +292,8 @@
   "Search results across notes": "Resultados de búsqueda en varias notas",
   "A folder grid with image thumbnails and document previews": "Una cuadrícula de carpeta con miniaturas de imágenes y vistas previas de documentos",
   "Markdown source and preview side by side": "Código Markdown y vista previa lado a lado",
-  "Download": "Descargar"
+  "Download": "Descargar",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Un Mac con chip de Apple y macOS 12 o posterior. La app está disponible en 14 idiomas."
  },
  "vi": {
   "Features": "Tính năng",
@@ -276,7 +350,6 @@
   "Does it work with iCloud Drive?": "Có dùng được với iCloud Drive không?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Có. Mở một thư mục trong iCloud Drive và dùng nó trên từng máy Mac của bạn. Ghi chú chỉ có trên đám mây sẽ được tải về khi bạn mở.",
   "What do I need?": "Tôi cần gì?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Máy Mac dùng chip Apple và macOS 12 trở lên. Ứng dụng có 13 ngôn ngữ.",
   "How do I send feedback?": "Gửi góp ý bằng cách nào?",
   "Leave a review on the App Store, or write to us from the": "Hãy để lại đánh giá trên App Store, hoặc viết cho chúng tôi qua",
   "support page": "trang hỗ trợ",
@@ -293,7 +366,8 @@
   "Search results across notes": "Kết quả tìm kiếm trên nhiều ghi chú",
   "A folder grid with image thumbnails and document previews": "Lưới thư mục với ảnh thu nhỏ và bản xem trước tài liệu",
   "Markdown source and preview side by side": "Mã nguồn Markdown và bản xem trước song song",
-  "Download": "Tải về"
+  "Download": "Tải về",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Máy Mac dùng chip Apple và macOS 12 trở lên. Ứng dụng có 14 ngôn ngữ."
  },
  "ms": {
   "Features": "Ciri",
@@ -350,7 +424,6 @@
   "Does it work with iCloud Drive?": "Adakah ia berfungsi dengan iCloud Drive?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Ya. Buka folder dalam iCloud Drive dan gunakannya pada setiap Mac anda. Nota yang hanya ada di awan dimuat turun apabila anda membukanya.",
   "What do I need?": "Apa yang saya perlukan?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Mac dengan cip Apple dan macOS 12 atau lebih baharu. App ini tersedia dalam 13 bahasa.",
   "How do I send feedback?": "Bagaimana saya menghantar maklum balas?",
   "Leave a review on the App Store, or write to us from the": "Tinggalkan ulasan di App Store, atau tulis kepada kami melalui",
   "support page": "halaman sokongan",
@@ -367,7 +440,8 @@
   "Search results across notes": "Hasil carian merentas nota",
   "A folder grid with image thumbnails and document previews": "Grid folder dengan lakaran kecil imej dan pratonton dokumen",
   "Markdown source and preview side by side": "Sumber Markdown dan pratonton bersebelahan",
-  "Download": "Muat turun"
+  "Download": "Muat turun",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Mac dengan cip Apple dan macOS 12 atau lebih baharu. App ini tersedia dalam 14 bahasa."
  },
  "id": {
   "Features": "Fitur",
@@ -424,7 +498,6 @@
   "Does it work with iCloud Drive?": "Apakah bisa dipakai dengan iCloud Drive?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Bisa. Buka folder di iCloud Drive dan gunakan di setiap Mac Anda. Catatan yang hanya ada di cloud diunduh saat Anda membukanya.",
   "What do I need?": "Apa yang saya perlukan?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Mac dengan chip Apple dan macOS 12 atau lebih baru. App ini tersedia dalam 13 bahasa.",
   "How do I send feedback?": "Bagaimana cara mengirim masukan?",
   "Leave a review on the App Store, or write to us from the": "Tulis ulasan di App Store, atau hubungi kami melalui",
   "support page": "halaman dukungan",
@@ -441,7 +514,8 @@
   "Search results across notes": "Hasil pencarian di seluruh catatan",
   "A folder grid with image thumbnails and document previews": "Kisi folder dengan gambar mini dan pratinjau dokumen",
   "Markdown source and preview side by side": "Sumber Markdown dan pratinjau berdampingan",
-  "Download": "Unduh"
+  "Download": "Unduh",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Mac dengan chip Apple dan macOS 12 atau lebih baru. App ini tersedia dalam 14 bahasa."
  },
  "pt-BR": {
   "Features": "Recursos",
@@ -498,7 +572,6 @@
   "Does it work with iCloud Drive?": "Funciona com o iCloud Drive?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Sim. Abra uma pasta no iCloud Drive e use em cada um dos seus Macs. Notas que estão só na nuvem são baixadas quando você as abre.",
   "What do I need?": "Do que eu preciso?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Um Mac com chip da Apple e macOS 12 ou posterior. O app está disponível em 13 idiomas.",
   "How do I send feedback?": "Como envio sugestões?",
   "Leave a review on the App Store, or write to us from the": "Deixe uma avaliação na App Store ou escreva para nós pela",
   "support page": "página de suporte",
@@ -515,7 +588,8 @@
   "Search results across notes": "Resultados de busca em várias notas",
   "A folder grid with image thumbnails and document previews": "Uma grade de pasta com miniaturas de imagens e pré-visualizações de documentos",
   "Markdown source and preview side by side": "Código Markdown e pré-visualização lado a lado",
-  "Download": "Baixar"
+  "Download": "Baixar",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Um Mac com chip da Apple e macOS 12 ou posterior. O app está disponível em 14 idiomas."
  },
  "th": {
   "Features": "ฟีเจอร์",
@@ -572,7 +646,6 @@
   "Does it work with iCloud Drive?": "ใช้กับ iCloud Drive ได้ไหม",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "ได้ เปิดโฟลเดอร์ใน iCloud Drive แล้วใช้บน Mac แต่ละเครื่องของคุณ โน้ตที่อยู่บนคลาวด์เท่านั้นจะถูกดาวน์โหลดเมื่อคุณเปิด",
   "What do I need?": "ต้องใช้อะไรบ้าง",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Mac ที่ใช้ชิป Apple และ macOS 12 ขึ้นไป แอปรองรับ 13 ภาษา",
   "How do I send feedback?": "ส่งความคิดเห็นได้อย่างไร",
   "Leave a review on the App Store, or write to us from the": "เขียนรีวิวใน App Store หรือติดต่อเราผ่าน",
   "support page": "หน้าฝ่ายสนับสนุน",
@@ -589,7 +662,8 @@
   "Search results across notes": "ผลการค้นหาจากหลายโน้ต",
   "A folder grid with image thumbnails and document previews": "ตารางโฟลเดอร์พร้อมภาพย่อรูปภาพและตัวอย่างเอกสาร",
   "Markdown source and preview side by side": "ซอร์ส Markdown และตัวอย่างแสดงเคียงข้างกัน",
-  "Download": "ดาวน์โหลด"
+  "Download": "ดาวน์โหลด",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Mac ที่ใช้ชิป Apple และ macOS 12 ขึ้นไป แอปรองรับ 14 ภาษา"
  },
  "ru": {
   "Features": "Возможности",
@@ -646,7 +720,6 @@
   "Does it work with iCloud Drive?": "Работает ли с iCloud Drive?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Да. Откройте папку в iCloud Drive и пользуйтесь ей на каждом своём Mac. Заметки, которые есть только в облаке, загружаются при открытии.",
   "What do I need?": "Что нужно?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Mac с чипом Apple и macOS 12 или новее. Приложение доступно на 13 языках.",
   "How do I send feedback?": "Как отправить отзыв?",
   "Leave a review on the App Store, or write to us from the": "Оставьте отзыв в App Store или напишите нам через",
   "support page": "страницу поддержки",
@@ -663,7 +736,8 @@
   "Search results across notes": "Результаты поиска по заметкам",
   "A folder grid with image thumbnails and document previews": "Сетка папки с миниатюрами изображений и предпросмотром документов",
   "Markdown source and preview side by side": "Исходный текст Markdown и предпросмотр рядом",
-  "Download": "Скачать"
+  "Download": "Скачать",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Mac с чипом Apple и macOS 12 или новее. Приложение доступно на 14 языках."
  },
  "fr": {
   "Features": "Fonctionnalités",
@@ -720,7 +794,6 @@
   "Does it work with iCloud Drive?": "Est-ce compatible avec iCloud Drive ?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Oui. Ouvrez un dossier dans iCloud Drive et utilisez-le sur chacun de vos Mac. Les notes présentes uniquement dans le nuage sont téléchargées à l’ouverture.",
   "What do I need?": "De quoi ai-je besoin ?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Un Mac avec puce Apple et macOS 12 ou ultérieur. L’app est disponible en 13 langues.",
   "How do I send feedback?": "Comment envoyer un avis ?",
   "Leave a review on the App Store, or write to us from the": "Laissez un avis sur l’App Store, ou écrivez-nous depuis la",
   "support page": "page d’assistance",
@@ -737,7 +810,8 @@
   "Search results across notes": "Résultats de recherche dans plusieurs notes",
   "A folder grid with image thumbnails and document previews": "Une grille de dossier avec vignettes d’images et aperçus de documents",
   "Markdown source and preview side by side": "Source Markdown et aperçu côte à côte",
-  "Download": "Télécharger"
+  "Download": "Télécharger",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Un Mac avec puce Apple et macOS 12 ou ultérieur. L’app est disponible en 14 langues."
  },
  "de": {
   "Features": "Funktionen",
@@ -794,7 +868,6 @@
   "Does it work with iCloud Drive?": "Funktioniert es mit iCloud Drive?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Ja. Öffne einen Ordner in iCloud Drive und nutze ihn auf jedem deiner Macs. Notizen, die nur in der Cloud liegen, werden beim Öffnen geladen.",
   "What do I need?": "Was brauche ich?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Einen Mac mit Apple Silicon und macOS 12 oder neuer. Die App gibt es in 13 Sprachen.",
   "How do I send feedback?": "Wie kann ich Feedback geben?",
   "Leave a review on the App Store, or write to us from the": "Schreib eine Bewertung im App Store oder schreib uns über die",
   "support page": "Supportseite",
@@ -811,7 +884,8 @@
   "Search results across notes": "Suchergebnisse über mehrere Notizen",
   "A folder grid with image thumbnails and document previews": "Ein Ordnerraster mit Bildminiaturen und Dokumentvorschauen",
   "Markdown source and preview side by side": "Markdown-Quelltext und Vorschau nebeneinander",
-  "Download": "Laden"
+  "Download": "Laden",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Einen Mac mit Apple Silicon und macOS 12 oder neuer. Die App gibt es in 14 Sprachen."
  },
  "it": {
   "Features": "Funzioni",
@@ -868,7 +942,6 @@
   "Does it work with iCloud Drive?": "Funziona con iCloud Drive?",
   "Yes. Open a folder in iCloud Drive and use it on each of your Macs. Notes that are only in the cloud are fetched when you open them.": "Sì. Apri una cartella in iCloud Drive e usala su ognuno dei tuoi Mac. Le note presenti solo nel cloud vengono scaricate quando le apri.",
   "What do I need?": "Cosa mi serve?",
-  "A Mac with Apple silicon and macOS 12 or later. The app is available in 13 languages.": "Un Mac con chip Apple e macOS 12 o successivo. L’app è disponibile in 13 lingue.",
   "How do I send feedback?": "Come invio un feedback?",
   "Leave a review on the App Store, or write to us from the": "Lascia una recensione sull’App Store, oppure scrivici dalla",
   "support page": "pagina di supporto",
@@ -885,6 +958,7 @@
   "Search results across notes": "Risultati di ricerca tra le note",
   "A folder grid with image thumbnails and document previews": "Una griglia di cartella con miniature di immagini e anteprime di documenti",
   "Markdown source and preview side by side": "Sorgente Markdown e anteprima affiancate",
-  "Download": "Scarica"
+  "Download": "Scarica",
+  "A Mac with Apple silicon and macOS 12 or later. The app is available in 14 languages.": "Un Mac con chip Apple e macOS 12 o successivo. L’app è disponibile in 14 lingue."
  }
 }

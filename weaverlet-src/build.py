@@ -8,9 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT.parent / "public" / "weaverlet"
 SITE = "https://qn51z.com/weaverlet/"
-LANGS = ["en", "ko", "zh-Hans", "es", "vi", "ms", "id", "pt-BR", "th", "ru", "fr", "de", "it"]
+LANGS = ["en", "ko", "ja", "zh-Hans", "es", "vi", "ms", "id", "pt-BR", "th", "ru", "fr", "de", "it"]
 OG_LOCALE = {
-    "en": "en_US", "ko": "ko_KR", "zh-Hans": "zh_CN", "es": "es_ES", "vi": "vi_VN", "ms": "ms_MY",
+    "en": "en_US", "ko": "ko_KR", "ja": "ja_JP", "zh-Hans": "zh_CN", "es": "es_ES", "vi": "vi_VN", "ms": "ms_MY",
     "id": "id_ID", "pt-BR": "pt_BR", "th": "th_TH", "ru": "ru_RU", "fr": "fr_FR", "de": "de_DE", "it": "it_IT",
 }
 EN_META = {

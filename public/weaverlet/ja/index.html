@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weaverlet: Mac用のMarkdownノート</title>
+<meta name="description" content="Weaverletは今使っているMarkdownフォルダをそのまま開きます。ウィキリンク、バックリンク、Mermaid、すばやい検索、PDFやOffice書類のビューア。インポートもアカウント登録も不要です。">
+<link rel="canonical" href="https://qn51z.com/weaverlet/ja/">
+<link rel="alternate" hreflang="en" href="https://qn51z.com/weaverlet/">
+<link rel="alternate" hreflang="ko" href="https://qn51z.com/weaverlet/ko/">
+<link rel="alternate" hreflang="ja" href="https://qn51z.com/weaverlet/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://qn51z.com/weaverlet/zh-hans/">
+<link rel="alternate" hreflang="es" href="https://qn51z.com/weaverlet/es/">
+<link rel="alternate" hreflang="vi" href="https://qn51z.com/weaverlet/vi/">
+<link rel="alternate" hreflang="ms" href="https://qn51z.com/weaverlet/ms/">
+<link rel="alternate" hreflang="id" href="https://qn51z.com/weaverlet/id/">
+<link rel="alternate" hreflang="pt-BR" href="https://qn51z.com/weaverlet/pt-br/">
+<link rel="alternate" hreflang="th" href="https://qn51z.com/weaverlet/th/">
+<link rel="alternate" hreflang="ru" href="https://qn51z.com/weaverlet/ru/">
+<link rel="alternate" hreflang="fr" href="https://qn51z.com/weaverlet/fr/">
+<link rel="alternate" hreflang="de" href="https://qn51z.com/weaverlet/de/">
+<link rel="alternate" hreflang="it" href="https://qn51z.com/weaverlet/it/">
+<link rel="alternate" hreflang="x-default" href="https://qn51z.com/weaverlet/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Weaverlet: Mac用のMarkdownノート">
+<meta property="og:description" content="今使っているMarkdownフォルダを、インポートもアカウント登録もなしでそのまま開きます。">
+<meta property="og:image" content="https://qn51z.com/weaverlet/img/og-image-1200x630.png">
+<meta property="og:url" content="https://qn51z.com/weaverlet/ja/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Weaverlet", "description": "Weaverletは今使っているMarkdownフォルダをそのまま開きます。ウィキリンク、バックリンク、Mermaid、すばやい検索、PDFやOffice書類のビューア。インポートもアカウント登録も不要です。", "inLanguage": "ja", "operatingSystem": "macOS 12 or later", "applicationCategory": "UtilitiesApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "downloadUrl": "https://apps.apple.com/app/id6833345636", "url": "https://qn51z.com/weaverlet/ja/", "image": "https://qn51z.com/weaverlet/img/og-image-1200x630.png"}</script>
+<link rel="icon" href="/weaverlet/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/weaverlet/img/apple-touch-icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --teal: #00BCA6;
+  --teal-deep: #00796B;
+  --teal-light: #5ee0cf;
+  --mist-1: #EEF4F6;
+  --mist-2: #DCE7EB;
+  --ink: #1C2830;
+  --paper: #FFFFFF;
+  --warp: #B8C5CC;
+  --muted: #4a5a63;
+  --bg: var(--paper);
+  --fg: var(--ink);
+  --soft: var(--mist-1);
+  --accent-text: var(--teal-deep);
+  --line: #d9e1e5;
+  --shadow: 0 1.5rem 4rem rgb(28 40 48 / 0.18), 0 0 0 1px rgb(28 40 48 / 0.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12191e;
+    --fg: #e8eef0;
+    --soft: #1a242a;
+    --accent-text: var(--teal-light);
+    --muted: #a3b2b9;
+    --line: #2a363d;
+    --shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.5), 0 0 0 1px rgb(255 255 255 / 0.06);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 1.0625rem/1.65 "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+html[lang^="zh"] body, html[lang="th"] body { word-break: normal; }
+a { color: var(--accent-text); }
+img, video { max-width: 100%; height: auto; display: block; }
+.shot video { width: 100%; }
+.wrap { width: min(72rem, 100% - 2rem); margin-inline: auto; }
+
+header.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  backdrop-filter: saturate(1.6) blur(18px);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+.nav .wrap { display: flex; align-items: center; gap: 1.25rem; height: 3.5rem; }
+.nav .btn.primary { padding: 0.4rem 0.95rem; border-radius: 0.6rem; font-size: 0.9rem; }
+html:not(.past) .nav .btn.primary { display: none; }
+.brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.1rem; color: var(--fg); text-decoration: none; }
+.brand img { width: 2rem; height: 2rem; }
+.nav nav { display: flex; gap: 1.25rem; margin-left: auto; align-items: center; }
+.nav nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+.nav nav a:hover { color: var(--fg); }
+.lang { border: 1px solid var(--line); border-radius: 999px; background: none; color: var(--muted); font: inherit; font-size: 0.85rem; padding: 0.2rem 0.65rem; cursor: pointer; }
+@media (max-width: 40rem) { .nav nav a.opt, .brand span { display: none; } .nav nav { gap: 0.5rem; } }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.4rem; border-radius: 0.75rem;
+  font-weight: 650; text-decoration: none; font-size: 1rem;
+}
+.btn.primary { background: var(--teal); color: var(--ink); }
+.btn.primary:hover { background: var(--teal-light); }
+.btn.ghost { color: var(--muted); border: 1px solid var(--line); cursor: default; }
+.btn.ghost.link { cursor: pointer; }
+
+.hero {
+  padding: 5rem 0 3rem;
+  background: linear-gradient(180deg, var(--soft) 0%, var(--bg) 70%);
+  text-align: center;
+}
+.hero .icon { width: 6rem; height: 6rem; margin: 0 auto 1.5rem; }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 1rem; }
+.hero p.sub { font-size: clamp(1.1rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 40rem; margin: 0 auto 2rem; }
+.cta { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.hero small { display: block; margin-top: 1rem; color: var(--muted); font-size: 0.9rem; }
+.shot { border-radius: 0.9rem; box-shadow: var(--shadow); overflow: hidden; background: var(--ink); }
+.hero .shot { margin: 3.5rem auto 0; max-width: 64rem; }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; padding: 3rem 0 1rem; }
+.fact { padding: 1.25rem 1.4rem; border: 1px solid var(--line); border-radius: 0.9rem; }
+.fact b { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
+.fact span { color: var(--muted); font-size: 0.95rem; }
+
+.weave { position: relative; --thread-x: calc((100% - min(72rem, 100% - 2rem)) / 2 + 0.5rem); }
+.weave::before, .weave::after {
+  content: ""; position: absolute; top: 6.4rem; bottom: 6rem; left: var(--thread-x); width: 2px; translate: -50% 0;
+}
+.weave::before { background: var(--line); }
+.weave::after { background: var(--teal); transform-origin: top; }
+section.feature { padding: 6rem 0 2rem; }
+.feature .text { position: relative; max-width: 44rem; padding-left: 2.75rem; margin-bottom: 2.5rem; }
+.feature .text::before {
+  content: ""; position: absolute; left: 0.5rem; top: 0.35rem; width: 0.9rem; height: 0.9rem; translate: -50% 0;
+  border: 2px solid var(--teal); border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 0.3rem var(--bg);
+}
+.feature .shot { position: relative; z-index: 1; }
+.kicker { color: var(--accent-text); font-weight: 650; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.feature h2 { font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0.4rem 0 1rem; }
+.feature p { color: var(--muted); font-size: 1.1rem; margin: 0 0 1.25rem; }
+.feature ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.feature li { padding: 0.3rem 0.85rem; border: 1px solid var(--line); border-radius: 999px; font-size: 0.92rem; }
+
+/* 스크롤 연출: 실이 따라 그려지고, 매듭이 맺히고, 스크린샷이 다른 속도로 떠오른다 */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .weave::after { animation: draw linear both; animation-timeline: --weave; animation-range: cover 50vh cover calc(100% - 50vh); }
+    .weave { view-timeline: --weave block; }
+    .feature .text::before { animation: knot linear both; animation-timeline: view(); animation-range: cover 30% cover 45%; }
+    .feature .text { animation: drift linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+    .feature .shot { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+    .hero .shot { transform-origin: 50% 0; animation: lay-flat linear both; animation-timeline: view(); animation-range: entry 0% cover 50%; }
+  }
+}
+@keyframes draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes knot { from { background: var(--bg); scale: 0.6; } to { background: var(--teal); scale: 1; } }
+@keyframes drift { from { opacity: 0; translate: 0 2rem; } to { opacity: 1; translate: 0 0; } }
+@keyframes rise { from { opacity: 0.3; translate: 0 6rem; scale: 0.95; } to { opacity: 1; translate: 0 0; scale: 1; } }
+@keyframes lay-flat { from { transform: perspective(80rem) rotateX(24deg) scale(0.9); } to { transform: none; } }
+
+.privacy { background: var(--ink); color: #e8eef0; padding: 5rem 0; }
+.privacy .wrap { max-width: 46rem; text-align: center; }
+.privacy h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0.4rem 0 1rem; }
+.privacy p { color: #b9c7cd; margin: 0; }
+.privacy .kicker { color: var(--teal-light); }
+
+.faq { padding: 5rem 0; }
+.faq .wrap { max-width: 46rem; }
+.faq h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0 0 1.5rem; }
+details { border-bottom: 1px solid var(--line); padding: 1rem 0; }
+summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+summary::after { content: "+"; color: var(--muted); }
+details[open] summary::after { content: "−"; }
+details p { color: var(--muted); margin: 0.6rem 0 0; }
+
+.final { text-align: center; padding: 4rem 0 5rem; background: linear-gradient(0deg, var(--soft) 0%, var(--bg) 100%); }
+.final h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0 0 1.5rem; }
+
+footer { border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: 0.9rem; }
+footer .wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+footer a { color: var(--muted); }
+footer .copy { margin-left: auto; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="https://qn51z.com/weaverlet/ja/"><img src="/weaverlet/img/icon-256.png" alt=""><span>Weaverlet</span></a>
+    <nav>
+      <a class="opt" href="#features">機能</a>
+      <a class="opt" href="#faq">FAQ</a>
+      <a class="opt" href="/weaverlet/support/">サポート</a>
+      <select class="lang" aria-label="Language"><option value="en" data-href="https://qn51z.com/weaverlet/">English</option><option value="ko" data-href="https://qn51z.com/weaverlet/ko/">한국어</option><option value="ja" data-href="https://qn51z.com/weaverlet/ja/" selected>日本語</option><option value="zh-Hans" data-href="https://qn51z.com/weaverlet/zh-hans/">简体中文</option><option value="es" data-href="https://qn51z.com/weaverlet/es/">Español</option><option value="vi" data-href="https://qn51z.com/weaverlet/vi/">Tiếng Việt</option><option value="ms" data-href="https://qn51z.com/weaverlet/ms/">Bahasa Melayu</option><option value="id" data-href="https://qn51z.com/weaverlet/id/">Bahasa Indonesia</option><option value="pt-BR" data-href="https://qn51z.com/weaverlet/pt-br/">Português (Brasil)</option><option value="th" data-href="https://qn51z.com/weaverlet/th/">ไทย</option><option value="ru" data-href="https://qn51z.com/weaverlet/ru/">Русский</option><option value="fr" data-href="https://qn51z.com/weaverlet/fr/">Français</option><option value="de" data-href="https://qn51z.com/weaverlet/de/">Deutsch</option><option value="it" data-href="https://qn51z.com/weaverlet/it/">Italiano</option></select>
+      <a class="btn primary" href="https://apps.apple.com/app/id6833345636">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <img class="icon" src="/weaverlet/img/icon-256.png" alt="Weaverletのアイコン">
+      <h1>
+        いつものMarkdownフォルダを、<br>そのまま開く。
+      </h1>
+      <p class="sub">
+        WeaverletはMacにあるノートのフォルダを、インポートもアカウント登録もなしで開きます。リンク、図、PDF、書類を落ち着いたひとつのウインドウで。
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="https://apps.apple.com/app/id6833345636">
+          Mac App Storeからダウンロード
+        </a>
+        <a class="btn ghost link" href="https://testflight.apple.com/join/fDUZVCBV">ベータ版を試す</a>
+      </div>
+      <small>
+        無料 · macOS 12以降 · Appleシリコン
+      </small>
+      <div class="shot"><video src="/weaverlet/img/preview.mp4?v=3" poster="/weaverlet/img/preview-poster.jpg?v=3" autoplay muted loop playsinline preload="auto" width="1280" height="720" aria-label="Weaverlet: クイックオープン、画像入りのノート、マインドマップ、グラフビュー"></video></div>
+
+      <div class="facts" id="features">
+        <div class="fact"><b>ファイルはそのまま</b><span>ノートはフォルダの中の普通の.mdファイルのままです。移行の手間も、囲い込みもありません。</span></div>
+        <div class="fact"><b>アカウントも追跡もなし</b><span>Weaverletはデータを収集しません。ノートがフォルダの外に出ることはありません。</span></div>
+        <div class="fact"><b>大きなフォルダでも速い</b><span>数千件のノートもすばやく開き、日本語・中国語・韓国語の部分一致でも検索できます。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="weave">
+  <section class="feature">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">つながるノート</div>
+        <h2>考えをノートからノートへたどる</h2>
+        <p>ウィキリンクはいつもの書き方のまま動きます。そのノートを参照しているノートが、ページのすぐ横に表示されます。</p>
+        <ul>
+          <li>ノートごとのバックリンクと発リンク</li>
+          <li>名前の変更や移動に合わせてリンクも更新</li>
+          <li>タグ、コールアウト、frontmatterプロパティ</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/05-backlinks.jpg" alt="サイドパネルにバックリンクが並んだノート" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">図</div>
+        <h2>考えの形を見る</h2>
+        <p>Mermaidの図を読める大きさで表示します。箇条書きはMarkdownのままマインドマップになります。</p>
+        <ul>
+          <li>拡大、移動、フルスクリーン、プレゼン</li>
+          <li>エラーは問題のある行まで示す</li>
+          <li>どのノートもスライドとして発表</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/04-mermaid.jpg" alt="ノートの中に大きく表示されたMermaidの図" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">検索</div>
+        <h2>入力し終える前に見つかる</h2>
+        <p>すべてのノートを本文まで検索。日本語・中国語・韓国語の部分一致にも対応しています。</p>
+        <ul>
+          <li>クイックオープンとコマンドパレット</li>
+          <li>ノート内の検索と置換</li>
+          <li>変更できるキーボードショートカット</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/06-search.jpg" alt="複数のノートにまたがる検索結果" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">Markdownの外へ</div>
+        <h2>フォルダの中身を、ひとつのウインドウで</h2>
+        <p>ノートの隣のPDF、会議でもらった表、韓国のHWP文書まで。アプリを切り替えずに開けます。</p>
+        <ul>
+          <li>PDF, DOCX, PPTX, XLSX, CSV, HWP</li>
+          <li>画像、動画、ソースコード</li>
+          <li>Finderからドロップして追加・表示</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/07-grid.jpg" alt="画像のサムネールと書類のプレビューが並ぶフォルダのグリッド" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <div class="text">
+        <div class="kicker">書く</div>
+        <h2>読んでいる場所でそのまま直す</h2>
+        <p>段落をクリックするとその場でMarkdownを編集できます。プレビューを横に並べたエディタも開けます。</p>
+        <ul>
+          <li>30日分のバージョン履歴をMacの中に</li>
+          <li>画像をノートに直接ペースト</li>
+          <li>フォルダごとに好きな並び順、先頭に入口ノート</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="/weaverlet/img/08-side-by-side.jpg" alt="Markdownのソースとプレビューを並べて表示" width="1800" height="1125" loading="lazy"></div>
+    </div>
+  </section>
+
+  </div>
+
+  <section class="privacy">
+    <div class="wrap">
+      <div class="kicker">プライバシー</div>
+      <h2>ノートはあなたのもの</h2>
+      <p>登録も分析も広告もありません。Weaverletは選んだフォルダだけを読み、履歴はMacの中に残します。App Storeのラベルは「データの収集なし」です。 <a href="/weaverlet/privacy/">プライバシーポリシー</a></p>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2>よくある質問</h2>
+      <details>
+        <summary>無料ですか?</summary>
+        <p>はい。最初のバージョンは無料で、App内課金もありません。将来、複数のMac間で同期できる有料プランを出すかもしれませんが、無料のアプリはそのまま残ります。</p>
+      </details>
+      <details>
+        <summary>今あるノートが変わりませんか?</summary>
+        <p>自分で編集したときだけ変わります。フォルダはそのまま読み込み、フォルダごとの並び順のルールだけを小さな隠しフォルダ.weaverに保存します。ほかのMarkdownアプリで使っているフォルダも並行して開けます。</p>
+      </details>
+      <details>
+        <summary>iCloud Driveでも使えますか?</summary>
+        <p>はい。iCloud Driveのフォルダを開けば、それぞれのMacで使えます。クラウドにだけあるノートは、開いたときにダウンロードされます。</p>
+      </details>
+      <details>
+        <summary>必要な環境は?</summary>
+        <p>Appleシリコン搭載のMacとmacOS 12以降。アプリは14の言語に対応しています。</p>
+      </details>
+      <details>
+        <summary>意見はどこに送ればいいですか?</summary>
+        <p>App Storeにレビューを書くか、 <a href="/weaverlet/support/">サポートページ</a>からご連絡ください。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>フォルダを開いて、読みはじめましょう。</h2>
+      <a class="btn primary" href="https://apps.apple.com/app/id6833345636">Mac App Storeからダウンロード</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/weaverlet/support/">サポート</a>
+    <a href="/weaverlet/privacy/">プライバシー</a>
+    <span class="copy">© 2026 JISUB KIM</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 자동 재생이 막힌 브라우저(저전력 모드·사이트 설정)에서는 직접 재생하고, 그래도 막히면 재생 버튼을 보인다
+  var hero = document.querySelector(".hero video");
+  if (hero) {
+    hero.muted = true;
+    var p = hero.play();
+    if (p && p.catch) p.catch(function () { hero.controls = true; });
+  }
+  // 첫 화면 받기 버튼이 지나가면 메뉴에 받기 버튼을 보인다
+  new IntersectionObserver(function (es) {
+    document.documentElement.classList.toggle("past", !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
+  }).observe(document.querySelector(".hero .cta"));
+  // 언어 선택은 기억해 두고, 첫 페이지에서만 기억한 언어나 브라우저 언어로 보낸다 (검색 로봇은 영어 그대로)
+  var pick = document.querySelector("select.lang");
+  pick.addEventListener("change", function () {
+    try { localStorage.setItem("weaverlet-lang", pick.value); } catch (e) {}
+    location.href = pick.selectedOptions[0].dataset.href;
+  });
+  if (document.documentElement.lang !== "en") return;
+  var saved = null;
+  try { saved = localStorage.getItem("weaverlet-lang"); } catch (e) {}
+  var nav = (navigator.language || "").toLowerCase();
+  var want = saved || [].map.call(pick.options, function (o) { return o.value; }).filter(function (v) {
+    var l = v.toLowerCase();
+    return l === "zh-hans" ? /^zh-(hans|cn|sg)/.test(nav) : l === "pt-br" ? /^pt/.test(nav) : nav.split("-")[0] === l;
+  })[0];
+  var go = want && pick.querySelector('option[value="' + want + '"]');
+  if (go && want !== "en") location.replace(go.dataset.href);
+})();
+</script>
+</body>
+</html>
