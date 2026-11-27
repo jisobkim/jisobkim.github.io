@@ -76,16 +76,15 @@ img, video { max-width: 100%; height: auto; display: block; }
 .shot video { width: 100%; }
 .wrap { width: min(72rem, 100% - 2rem); margin-inline: auto; }
 
-header.nav { position: sticky; top: 0.75rem; z-index: 10; margin-top: 0.75rem; }
-.nav .wrap {
-  display: flex; align-items: center; gap: 1.25rem; height: 3.5rem;
-  width: min(60rem, 100% - 2rem); padding: 0 0.5rem 0 1rem;
-  background: color-mix(in srgb, var(--bg) 85%, transparent);
-  backdrop-filter: saturate(1.4) blur(12px);
-  border: 1px solid var(--line); border-radius: 999px;
-  box-shadow: 0 0.5rem 1.5rem rgb(28 40 48 / 0.08);
+header.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  backdrop-filter: saturate(1.6) blur(18px);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
 }
-.nav .btn.primary { padding: 0.45rem 1rem; border-radius: 999px; font-size: 0.9rem; }
+.nav .wrap { display: flex; align-items: center; gap: 1.25rem; height: 3.5rem; }
+.nav .btn.primary { padding: 0.4rem 0.95rem; border-radius: 0.6rem; font-size: 0.9rem; }
+html:not(.past) .nav .btn.primary { display: none; }
 .brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.1rem; color: var(--fg); text-decoration: none; }
 .brand img { width: 2rem; height: 2rem; }
 .nav nav { display: flex; gap: 1.25rem; margin-left: auto; align-items: center; }
@@ -105,7 +104,7 @@ header.nav { position: sticky; top: 0.75rem; z-index: 10; margin-top: 0.75rem; }
 .btn.ghost.link { cursor: pointer; }
 
 .hero {
-  padding: 8rem 0 3rem; margin-top: -4.25rem;
+  padding: 5rem 0 3rem;
   background: linear-gradient(180deg, var(--soft) 0%, var(--bg) 70%);
   text-align: center;
 }
@@ -122,15 +121,41 @@ header.nav { position: sticky; top: 0.75rem; z-index: 10; margin-top: 0.75rem; }
 .fact b { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
 .fact span { color: var(--muted); font-size: 0.95rem; }
 
-section.feature { padding: 6rem 0 2rem; text-align: center; }
-.feature .text { max-width: 46rem; margin: 0 auto 2.5rem; }
-.feature .shot { max-width: 64rem; margin-inline: auto; }
-.kicker { color: var(--accent-text); font-weight: 650; font-size: 0.9rem; letter-spacing: 0.04em; }
-.kicker .num { font-family: ui-monospace, "SF Mono", Menlo, monospace; margin-right: 0.5rem; }
-.feature h2 { font-size: clamp(2rem, 4.8vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0.5rem 0 1rem; }
+.weave { position: relative; --thread-x: calc((100% - min(72rem, 100% - 2rem)) / 2 + 0.5rem); }
+.weave::before, .weave::after {
+  content: ""; position: absolute; top: 6.4rem; bottom: 6rem; left: var(--thread-x); width: 2px; translate: -50% 0;
+}
+.weave::before { background: var(--line); }
+.weave::after { background: var(--teal); transform-origin: top; }
+section.feature { padding: 6rem 0 2rem; }
+.feature .text { position: relative; max-width: 44rem; padding-left: 2.75rem; margin-bottom: 2.5rem; }
+.feature .text::before {
+  content: ""; position: absolute; left: 0.5rem; top: 0.35rem; width: 0.9rem; height: 0.9rem; translate: -50% 0;
+  border: 2px solid var(--teal); border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 0.3rem var(--bg);
+}
+.feature .shot { position: relative; z-index: 1; }
+.kicker { color: var(--accent-text); font-weight: 650; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.feature h2 { font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0.4rem 0 1rem; }
 .feature p { color: var(--muted); font-size: 1.1rem; margin: 0 0 1.25rem; }
-.feature ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+.feature ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .feature li { padding: 0.3rem 0.85rem; border: 1px solid var(--line); border-radius: 999px; font-size: 0.92rem; }
+
+/* 스크롤 연출: 실이 따라 그려지고, 매듭이 맺히고, 스크린샷이 다른 속도로 떠오른다 */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .weave::after { animation: draw linear both; animation-timeline: --weave; animation-range: cover 50vh cover calc(100% - 50vh); }
+    .weave { view-timeline: --weave block; }
+    .feature .text::before { animation: knot linear both; animation-timeline: view(); animation-range: cover 30% cover 45%; }
+    .feature .text { animation: drift linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+    .feature .shot { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+    .hero .shot { transform-origin: 50% 0; animation: lay-flat linear both; animation-timeline: view(); animation-range: entry 0% cover 50%; }
+  }
+}
+@keyframes draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes knot { from { background: var(--bg); scale: 0.6; } to { background: var(--teal); scale: 1; } }
+@keyframes drift { from { opacity: 0; translate: 0 2rem; } to { opacity: 1; translate: 0 0; } }
+@keyframes rise { from { opacity: 0.3; translate: 0 6rem; scale: 0.95; } to { opacity: 1; translate: 0 0; scale: 1; } }
+@keyframes lay-flat { from { transform: perspective(80rem) rotateX(24deg) scale(0.9); } to { transform: none; } }
 
 .privacy { background: var(--ink); color: #e8eef0; padding: 5rem 0; }
 .privacy .wrap { max-width: 46rem; text-align: center; }
@@ -149,19 +174,6 @@ details p { color: var(--muted); margin: 0.6rem 0 0; }
 
 .final { text-align: center; padding: 4rem 0 5rem; background: linear-gradient(0deg, var(--soft) 0%, var(--bg) 100%); }
 .final h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0 0 1.5rem; }
-
-.dock {
-  position: fixed; right: 1rem; bottom: 1rem; z-index: 10;
-  display: flex; align-items: center; gap: 0.75rem; padding: 0.4rem 0.4rem 0.4rem 0.6rem;
-  background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(12px);
-  border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow);
-  font-weight: 650; transition: opacity 0.2s, translate 0.2s;
-}
-.dock img { width: 2rem; height: 2rem; }
-.dock .btn { padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.9rem; }
-.dock[hidden] { display: flex; opacity: 0; translate: 0 1rem; pointer-events: none; }
-@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
-@media (max-width: 40rem) { .dock .name { display: none; } }
 
 footer { border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: 0.9rem; }
 footer .wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
@@ -213,10 +225,11 @@ footer .copy { margin-left: auto; }
     </div>
   </section>
 
+  <div class="weave">
   <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker"><span class="num">01</span>相连的笔记</div>
+        <div class="kicker">相连的笔记</div>
         <h2>顺着一个想法，从一篇笔记走到下一篇</h2>
         <p>Wiki 链接按你习惯的写法工作。每篇笔记旁边都能看到哪些笔记指向它。</p>
         <ul>
@@ -232,7 +245,7 @@ footer .copy { margin-left: auto; }
   <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker"><span class="num">02</span>图表</div>
+        <div class="kicker">图表</div>
         <h2>看见想法的形状</h2>
         <p>Mermaid 图表以便于阅读的大尺寸显示。大纲无需离开 Markdown 就能变成思维导图。</p>
         <ul>
@@ -248,7 +261,7 @@ footer .copy { margin-left: auto; }
   <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker"><span class="num">03</span>搜索</div>
+        <div class="kicker">搜索</div>
         <h2>还没打完字就找到</h2>
         <p>全文搜索所有笔记，中文、日文和韩文也支持部分匹配。</p>
         <ul>
@@ -264,7 +277,7 @@ footer .copy { margin-left: auto; }
   <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker"><span class="num">04</span>不止 Markdown</div>
+        <div class="kicker">不止 Markdown</div>
         <h2>文件夹里的一切，一个窗口</h2>
         <p>笔记旁的 PDF、会议上拿到的表格、韩国的 HWP 报告，无需切换应用即可打开。</p>
         <ul>
@@ -280,7 +293,7 @@ footer .copy { margin-left: auto; }
   <section class="feature">
     <div class="wrap">
       <div class="text">
-        <div class="kicker"><span class="num">05</span>写作</div>
+        <div class="kicker">写作</div>
         <h2>在读到的地方直接修改</h2>
         <p>点击任意段落即可就地编辑它的 Markdown，也可以打开编辑器，旁边同时显示实时预览。</p>
         <ul>
@@ -292,6 +305,8 @@ footer .copy { margin-left: auto; }
       <div class="shot"><img src="/weaverlet/img/08-side-by-side.jpg" alt="Markdown 源文本与预览并排显示" width="1800" height="1125" loading="lazy"></div>
     </div>
   </section>
+
+  </div>
 
   <section class="privacy">
     <div class="wrap">
@@ -343,11 +358,6 @@ footer .copy { margin-left: auto; }
   </div>
 </footer>
 
-<div class="dock" hidden>
-  <img src="/weaverlet/img/icon-256.png" alt=""><span class="name">Weaverlet</span>
-  <a class="btn primary" href="https://apps.apple.com/app/id6833345636">在 Mac App Store 下载</a>
-</div>
-
 <script>
 (function () {
   // 자동 재생이 막힌 브라우저(저전력 모드·사이트 설정)에서는 직접 재생하고, 그래도 막히면 재생 버튼을 보인다
@@ -357,15 +367,10 @@ footer .copy { margin-left: auto; }
     var p = hero.play();
     if (p && p.catch) p.catch(function () { hero.controls = true; });
   }
-  // 첫 화면·마지막 받기 버튼이 보이는 동안은 아래 칩을 숨긴다
-  var dock = document.querySelector(".dock");
-  var shown = new Set();
-  var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { e.isIntersecting ? shown.add(e.target) : shown.delete(e.target); });
-    dock.hidden = shown.size > 0;
-  });
-  io.observe(document.querySelector(".hero .cta"));
-  io.observe(document.querySelector(".final .btn"));
+  // 첫 화면 받기 버튼이 지나가면 메뉴에 받기 버튼을 보인다
+  new IntersectionObserver(function (es) {
+    document.documentElement.classList.toggle("past", !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
+  }).observe(document.querySelector(".hero .cta"));
   // 언어 선택은 기억해 두고, 첫 페이지에서만 기억한 언어나 브라우저 언어로 보낸다 (검색 로봇은 영어 그대로)
   var pick = document.querySelector("select.lang");
   pick.addEventListener("change", function () {
