@@ -3,17 +3,22 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import { SITE_TITLE } from '../consts';
+import { type Lang, SITE_TITLE } from '../consts';
 
 interface Props {
 	title: string;
 	description: string;
 	image?: ImageMetadata;
+	lang?: Lang;
+	// 다른 언어판 주소. 없으면 hreflang·자동 이동을 하지 않는다
+	alt?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image } = Astro.props;
+const { title, description, image, lang = 'ko', alt } = Astro.props;
+const koURL = lang === 'ko' ? canonicalURL : alt && new URL(alt, Astro.site);
+const enURL = lang === 'en' ? canonicalURL : alt && new URL(alt, Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -39,6 +44,27 @@ const { title, description, image } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+{alt && <link rel="alternate" hreflang="ko" href={koURL} />}
+{alt && <link rel="alternate" hreflang="en" href={enURL} />}
+{alt && <link rel="alternate" hreflang="x-default" href={koURL} />}
+
+{
+	lang === 'ko' && alt && (
+		<script is:inline define:vars={{ alt }}>
+			// 첫 방문 한 번만: 브라우저 언어가 한국어가 아니면 영문판으로 보낸다. 고른 언어는 KO/EN 버튼이 덮어쓴다.
+			// 검색 로봇은 보내지 않는다. 보내면 한국어 페이지가 색인에서 빠진다
+			try {
+				if (!localStorage.getItem('lang')) {
+					const langs = navigator.languages?.length ? navigator.languages : [navigator.language || ''];
+					const ko = langs.some((l) => /^ko\b/i.test(l || ''));
+					localStorage.setItem('lang', ko ? 'ko' : 'en');
+					const bot = /bot|crawl|spider|slurp|google|mediapartners|lighthouse|headless|yeti|daum|naver|bing|inspection/i.test(navigator.userAgent);
+					if (!ko && !bot && langs[0]) location.replace(alt);
+				}
+			} catch {}
+		</script>
+	)
+}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -46,6 +72,7 @@ const { title, description, image } = Astro.props;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
+<meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ko_KR'} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />

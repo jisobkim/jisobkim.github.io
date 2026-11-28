@@ -1,16 +1,26 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { type Lang, SITE_TITLE, UI, prefix } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+
+interface Props {
+	lang?: Lang;
+	alt?: string;
+}
+
+const { lang = 'ko', alt } = Astro.props;
+const other: Lang = lang === 'ko' ? 'en' : 'ko';
+const switchHref = alt ?? UI[other].home;
 ---
 
 <header>
 	<nav>
 		<h2>
-			<a href="/">{SITE_TITLE}</a>
+			<a href={UI[lang].home}>{SITE_TITLE}</a>
 		</h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href={UI[lang].home}>Home</HeaderLink>
+			<HeaderLink href={`${prefix(lang)}/about`}>About</HeaderLink>
+			<a href={switchHref} hreflang={other} onclick={`localStorage.setItem('lang','${other}')`}>{UI[lang].switchLabel}</a>
 		</div>
 	</nav>
 </header>

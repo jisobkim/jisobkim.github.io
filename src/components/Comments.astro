@@ -4,6 +4,7 @@ const REPO = 'jisobkim/jisobkim.github.io';
 const REPO_ID = 'R_kgDOVWZK-Q';
 const CATEGORY = 'Announcements';
 const CATEGORY_ID = 'DIC_kwDOVWZK-c4DLOi0';
+const { lang = 'ko' } = Astro.props as { lang?: 'ko' | 'en' };
 ---
 
 {REPO_ID && CATEGORY_ID && (
@@ -19,7 +20,7 @@ const CATEGORY_ID = 'DIC_kwDOVWZK-c4DLOi0';
 		data-reactions-enabled="1"
 		data-input-position="bottom"
 		data-theme="light"
-		data-lang="ko"
+		data-lang={lang}
 		crossorigin="anonymous"
 		async
 	></script>

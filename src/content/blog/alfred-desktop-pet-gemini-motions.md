@@ -15,8 +15,6 @@ tags:
 heroImage: ./alfred-desktop-pet-gemini-motions/alfred-cover.jpg
 ---
 
-![Gemini 무료판으로 데스크톱 펫에 모션 12개](<./alfred-desktop-pet-gemini-motions/alfred-cover.jpg>)
-
 화면 구석에 집사 한 명이 서 있다. Claude Code가 생각을 시작하면 콧수염을 쓰다듬고, 도구를 돌리면 은수저를 닦고, 권한을 물어야 하면 종을 흔든다. 오류가 나면 찻잔을 떨어뜨린다. 10월 1일에 이 모션 12개를 Gemini 무료판으로 만들어 넣었다. 그날 쓴 프롬프트와 실패한 시도를 정리한다.
 
 ![새로 넣은 모션 12개. 왼쪽 위부터 차 따르기, 생각, 수저 닦기, 종, 완료 인사, 찻잔 사고, 먼지떨이, 하품, 졸기, 쓰러짐, 잠, 깨기](<./alfred-desktop-pet-gemini-motions/alfred-motions.gif>)

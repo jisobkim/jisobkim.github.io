@@ -1,11 +1,15 @@
 ---
+import { type Lang, UI, prefix } from '../consts';
+
+const { lang = 'ko' } = Astro.props as { lang?: Lang };
+const t = UI[lang];
 const today = new Date();
 ---
 
 <footer>
 	&copy; {today.getFullYear()} JISUB KIM
 	<nav class="footer-links">
-		<a href="/about">소개</a> · <a href="/privacy">개인정보처리방침</a> · <a href="mailto:qn51z07734@gmail.com">문의</a>
+		<a href={`${prefix(lang)}/about`}>{t.about}</a> · <a href={`${prefix(lang)}/privacy`}>{t.privacy}</a> · <a href="mailto:qn51z07734@gmail.com">{t.contact}</a>
 	</nav>
 </footer>
 <style>
